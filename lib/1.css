@@ -1,0 +1,23 @@
+.pen-color{
+	width: 50px;
+	height: 25px;
+	border-radius: 15%;
+	cursor: pointer;
+	padding: 3px;
+	margin-right: 5px
+}
+.pen-color.active{
+	border: 2px solid black;
+}
+.pen-color.black{
+	background: black;
+}
+.pen-color.green{
+	background: green;
+}
+.pen-color.red{
+	background: red;
+}
+.pen-color.yellow{
+	background: yellow;
+}
