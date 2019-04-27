@@ -3,14 +3,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- other framework -->
 <script type="text/javascript" src="./lib/jquery.js"></script>
-<!-- <script type="text/javascript" src="./lib/bootstrap-4.3.1/js/bootstrap.min.js"></script> -->
-<!-- <link rel="stylesheet" href="./lib/bootstrap-4.3.1/css/bootstrap.min.css"> -->
+<script type="text/javascript" src="./lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="./lib/bootstrap-4.3.1/css/bootstrap.min.css">
 <!-- <link rel="stylesheet" href="./lib/1.css"> -->
 <!-- framework mxGraph -->
 <link rel="stylesheet" type="text/css" href="./lib/javascript/editor/styles/grapheditor.css">
  <script type="text/javascript">
 	mxBasePath = './lib/javascript/src';
+	var drawFree=false;
  </script>
+
 <script type="text/javascript" src="./lib/javascript/editor/js/Init.js"></script>
 <script type="text/javascript" src="./lib/javascript/editor/deflate/pako.min.js"></script>
 <script type="text/javascript" src="./lib/javascript/editor/deflate/base64.js"></script>
@@ -27,3 +29,7 @@
 <script type="text/javascript" src="./lib/javascript/editor/js/Menus.js"></script>
 <script type="text/javascript" src="./lib/javascript/editor/js/Toolbar.js"></script>
 <script type="text/javascript" src="./lib/javascript/editor/js/Dialogs.js"></script>
+<script type="text/javascript" src="./lib/javascript/editor/js/Footer.js"></script>
+<script type="text/javascript" src="./lib/svg/svg.min.js"></script>
+<script type="text/javascript" src="./lib/svg/dist/svg.draw.js"></script>
+<!-- <script type="text/javascript" src="./lib/svg/dist/svg.draw.min.js"></script> -->

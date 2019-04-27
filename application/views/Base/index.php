@@ -2,7 +2,7 @@
 		// Extends EditorUi to update I/O action states based on availability of backend
 		(function()
 		{
-			debugger;
+			
 			var editorUiInit = EditorUi.prototype.init;
 			
 			EditorUi.prototype.init = function()
