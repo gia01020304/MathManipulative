@@ -1,0 +1,196 @@
+<shapes name="mxgraph.ruler">
+	<shape name="Ruler Standard" id="ruler-standard" h="100" w="420" aspect="variable" strokewidth="2">
+		<foreground>
+			<rect h="100" w="420" x="0" y="0"/>
+			<fillstroke/>
+			<path>
+				<move x="10" y="0"/>
+				<line x="10" y="50"/>
+
+				<move x="25" y="0"/>
+				<line x="25" y="25"/>
+
+				<move x="40" y="0"/>
+				<line x="40" y="50"/>
+
+				<move x="55" y="0"/>
+				<line x="55" y="25"/>
+
+				<move x="70" y="0"/>
+				<line x="70" y="50"/>
+
+				<move x="85" y="0"/>
+				<line x="85" y="25"/>
+
+				<move x="100" y="0"/>
+				<line x="100" y="50"/>
+
+				<move x="115" y="0"/>
+				<line x="115" y="25"/>
+
+				<move x="130" y="0"/>
+				<line x="130" y="50"/>
+
+				<move x="145" y="0"/>
+				<line x="145" y="25"/>
+
+				<move x="160" y="0"/>
+				<line x="160" y="50"/>
+
+				<move x="175" y="0"/>
+				<line x="175" y="25"/>
+
+				<move x="190" y="0"/>
+				<line x="190" y="50"/>
+
+				<move x="205" y="0"/>
+				<line x="205" y="25"/>
+
+				<move x="220" y="0"/>
+				<line x="220" y="50"/>
+
+				<move x="235" y="0"/>
+				<line x="235" y="25"/>
+
+				<move x="250" y="0"/>
+				<line x="250" y="50"/>
+
+				<move x="265" y="0"/>
+				<line x="265" y="25"/>
+
+				<move x="280" y="0"/>
+				<line x="280" y="50"/>
+
+				<move x="295" y="0"/>
+				<line x="295" y="25"/>
+
+				<move x="310" y="0"/>
+				<line x="310" y="50"/>
+
+				<move x="325" y="0"/>
+				<line x="325" y="25"/>
+
+				<move x="340" y="0"/>
+				<line x="340" y="50"/>
+
+				<move x="355" y="0"/>
+				<line x="355" y="25"/>
+
+				<move x="370" y="0"/>
+				<line x="370" y="50"/>
+
+				<move x="385" y="0"/>
+				<line x="385" y="25"/>
+
+				<move x="400" y="0"/>
+				<line x="400" y="50"/>
+
+			</path>
+			<fillstroke/>
+			<stroke/>
+			<fontsize size="13"/>
+			<text str="0" align="center" valign="middle" x="10" y="60"/>
+			<text str="10" align="center" valign="middle" x="40" y="60"/>
+			<text str="20" align="center" valign="middle" x="70" y="60"/>
+			<text str="30" align="center" valign="middle" x="100" y="60"/>
+			<text str="40" align="center" valign="middle" x="130" y="60"/>
+			<text str="50" align="center" valign="middle" x="160" y="60"/>
+			<text str="60" align="center" valign="middle" x="190" y="60"/>
+			<text str="70" align="center" valign="middle" x="220" y="60"/>
+			<text str="80" align="center" valign="middle" x="250" y="60"/>
+			<text str="90" align="center" valign="middle" x="280" y="60"/>
+			<text str="100" align="center" valign="middle" x="310" y="60"/>
+			<text str="110" align="center" valign="middle" x="340" y="60"/>
+			<text str="120" align="center" valign="middle" x="370" y="60"/>
+			<text str="130" align="center" valign="middle" x="400" y="60"/>
+			<text str="mm" align="center" valign="middle" x="15" y="85"/>
+		</foreground>
+	</shape>
+	<shape name="Ruler Metric" id="ruler-metric" h="100" w="420" aspect="variable" strokewidth="2">
+		<foreground>
+			<rect h="100" w="420" x="0" y="0"/>
+			<fillstroke/>
+			<path>
+				<!-- 1cm -->
+				<!-- 1 -->
+				<move x="15" y="0"/>
+				<line x="15" y="50"/>
+				<!-- 2 -->
+				<move x="35" y="0"/>
+				<line x="35" y="15"/>
+				<!-- 3 -->
+				<move x="55" y="0"/>
+				<line x="55" y="25"/>
+				<!-- 4 -->
+				<move x="75" y="0"/>
+				<line x="75" y="15"/>
+				<!-- 5 -->
+				<move x="95" y="0"/>
+				<line x="95" y="50"/>
+				<!-- 2cm -->
+				<!-- 1 -->
+				<move x="115" y="0"/>
+				<line x="115" y="15"/>
+				<!-- 2 -->
+				<move x="135" y="0"/>
+				<line x="135" y="25"/>
+				<!-- 3 -->
+				<move x="155" y="0"/>
+				<line x="155" y="15"/>
+				<!-- 4 -->
+				<move x="175" y="0"/>
+				<line x="175" y="50"/>
+				
+				<!-- 3cm -->
+				<!-- 1 -->
+				<move x="195" y="0"/>
+				<line x="195" y="15"/>
+				<!-- 2 -->
+				<move x="215" y="0"/>
+				<line x="215" y="25"/>
+				<!-- 3 -->
+				<move x="235" y="0"/>
+				<line x="235" y="15"/>
+				<!-- 4 -->
+				<move x="255" y="0"/>
+				<line x="255" y="50"/>
+				<!-- 4cm -->
+				<!-- 1 -->
+				<move x="275" y="0"/>
+				<line x="275" y="15"/>
+				<!-- 2 -->
+				<move x="295" y="0"/>
+				<line x="295" y="25"/>
+				<!-- 3 -->
+				<move x="315" y="0"/>
+				<line x="315" y="15"/>
+				<!-- 4 -->
+				<move x="335" y="0"/>
+				<line x="335" y="50"/>
+				<!-- 5cm -->
+				<!-- 1 -->
+				<move x="355" y="0"/>
+				<line x="355" y="15"/>
+				<!-- 2 -->
+				<move x="375" y="0"/>
+				<line x="375" y="25"/>
+				<!-- 3 -->
+				<move x="395" y="0"/>
+				<line x="395" y="15"/>
+				<!-- 4 -->
+				<move x="415" y="0"/>
+				<line x="415" y="50"/>
+			</path>
+			<stroke/>
+			<fontsize size="20"/>
+			<fontweight weight="100"/>
+			<text str="0" align="center" valign="middle" x="15" y="60"/>
+			<text str="1" align="center" valign="middle" x="95" y="60"/>
+			<text str="2" align="center" valign="middle" x="175" y="60"/>
+			<text str="3" align="center" valign="middle" x="255" y="60"/>
+			<text str="4" align="center" valign="middle" x="335" y="60"/>
+			<text str="5" align="center" valign="middle" x="415" y="60"/>
+			<text str="In" align="center" valign="middle" x="15" y="85"/>
+		</foreground>
+	</shape>
+</shapes>
