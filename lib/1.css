@@ -1,10 +1,16 @@
+#GroupColor{
+	padding: 0 87px 0 87px;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+}
 .pen-color{
 	width: 50px;
 	height: 25px;
 	border-radius: 15%;
 	cursor: pointer;
-	padding: 3px;
-	margin-right: 5px
+	padding: 2px;
+	margin: 2px;
+	border: 2px solid transparent;
 }
 .pen-color.active{
 	border: 2px solid black;
@@ -20,6 +26,18 @@
 }
 .pen-color.yellow{
 	background: yellow;
+}
+.pen-color.blue{
+	background: blue;
+}
+.pen-color.orange{
+	background: orange;
+}
+.pen-color.brown{
+	background: brown;
+}
+.pen-color.pink{
+	background: pink;
 }
 /*#geBackgroundPage{
 	top: 0!important;
