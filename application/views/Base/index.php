@@ -48,4 +48,9 @@
 				document.body.innerHTML = '<center style="margin-top:10%;">Error loading resource files. Please check browser console.</center>';
 			});
 		})();
+		$(document).ready(function() {
+			<?php if (isset($shared)): ?>
+				restore(`<?= $shared->value ?>`)
+			<?php endif ?>
+		});
 	</script>

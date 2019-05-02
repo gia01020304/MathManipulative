@@ -18,17 +18,17 @@
 					<div class="alert alert-success unactive" role="alert" id="msgsuccess">
 					</div>
 					<div id="frmLogin" class="">
-						<form>
+						<form id="frmlogin">
 							<div class="form-group row">
-								<label for="UserName" class="col-12 col-md-2 form-control-label">User Name</label>
+								<label for="UserName" class="col-12 col-md-3 form-control-label">User Name</label>
 								<div class="col-10 col-md-6">
-									<input type="text" class="form-control" id="UserName" name="UserName" >
+									<input type="text" class="form-control" id="UserName" name="UserName" required >
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Password" class="col-12 col-md-2 form-control-label">Password</label>
+								<label for="Password" class="col-12 col-md-3 form-control-label">Password</label>
 								<div class="col-10 col-md-6">
-									<input type="password" class="form-control" id="Password" name="Password">
+									<input type="password" class="form-control" id="Password" name="Password" required>
 								</div>
 							</div>
 						</form>
@@ -41,25 +41,25 @@
 					<div id="frmRegister" class="unactive">
 						<form>
 							<div class="form-group row">
-								<label for="EmailRegister" class="col-12 col-md-2 form-control-label">Email</label>
+								<label for="EmailRegister" class="col-12 col-md-3 form-control-label">Email</label>
 								<div class="col-10 col-md-6">
 									<input type="email" class="form-control" id="EmailRegister" name="EmailRegister" >
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="UserNameRegister" class="col-12 col-md-2 form-control-label">User Name</label>
+								<label for="UserNameRegister" class="col-12 col-md-3 form-control-label">User Name</label>
 								<div class="col-10 col-md-6">
 									<input type="text" class="form-control" id="UserNameRegister" name="UserNameRegister" >
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="PasswordRegister" class="col-12 col-md-2 form-control-label">Password</label>
+								<label for="PasswordRegister" class="col-12 col-md-3 form-control-label">Password</label>
 								<div class="col-10 col-md-6">
 									<input type="password" class="form-control" id="PasswordRegister" name="PasswordRegister">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="PasswordRegister" class="col-12 col-md-2 form-control-label">Confirm Password</label>
+								<label for="PasswordRegister" class="col-12 col-md-3 form-control-label">Confirm Password</label>
 								<div class="col-10 col-md-6">
 									<input type="password" class="form-control" id="PasswordConfirmRegister" name="PasswordRegister">
 								</div>
@@ -68,7 +68,7 @@
 						<p class="text-center">REGISTERED? <span style="color: red"><a href="#" id="LoginHere">Login</a></span></p>
 						<div id="footer" class="float-right">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary">Register</button> 
+							<button type="button" class="btn btn-primary" id="btnRegister">Register</button> 
 						</div>
 					</div>
 				</div>
@@ -79,8 +79,79 @@
 		$('#popupLogin').on('show.bs.modal', function (e) {
 			$('#frmRegister').addClass('unactive');
 			$('#frmLogin').removeClass('unactive');
+			clearMsg();
 		})
+		$('#btnRegister').click(function(event) {
+			clearMsg();
+			var isValid=true;
+			var msg="";
+			if ($('#EmailRegister').val()==="") {
+				msg+="Email is required. ";
+				isValid=false;
+			}
+			if ($('#UserNameRegister').val()==="") {
+				msg+="UserName is required. ";
+				isValid=false;
+			}
+			if ($('#PasswordRegister').val()==="") {
+				msg+="Password is required. ";
+				isValid=false;
+			}
+			if ($('#PasswordConfirmRegister').val()==="") {
+				msg+="Password Confirm is required. ";
+				isValid=false;
+			}
+			if (!isValid) {
+				addMsgError(msg);
+				return false;
+			}
+			if ($('#PasswordConfirmRegister').val()!==$('#PasswordRegister').val()) {
+				msg+="Password confirm doesn't match ";
+				addMsgError(msg);
+				return false;
+			}
+			$.ajax({
+				url: '<?php echo site_url('AuthenticateCL/Register') ?>',
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					Email: $('#EmailRegister').val(),
+					UserName: $('#UserNameRegister').val(),
+					Password: $('#PasswordRegister').val(),
+					ConfirmPassword: $('#PasswordConfirmRegister').val()
+
+				},
+				success:function (resp) {
+					if (resp.success) {
+						$('#frmRegister').addClass('unactive');
+						$('#frmLogin').removeClass('unactive');
+						addMsgSuceess(resp.msg);
+					}else {
+						addMsgError(resp.msg);
+					}
+				},
+				error:function (resp) {
+					addMsgError("Register Error!");
+				}
+			})
+		});
 		$('#btnLogin').click(function(event) {
+			clearMsg();
+			var isValid=true;
+			var msg="";
+			if ($('#UserName').val()==="") {
+				msg+="UserName is required. ";
+				isValid=false;
+			}
+			if ($('#Password').val()==="") {
+				msg+="Password is required. ";
+				isValid=false;
+			}
+			if (!isValid) {
+				addMsgError(msg);
+				return false;
+			}
+			
 			$.ajax({
 				url: '<?php echo site_url("AuthenticateCL/Login") ?>',
 				type: 'POST',
@@ -93,25 +164,26 @@
 					if (resp.success) {
 						debugger;
 						$('#popupLogin').modal('hide');
-						$('#authenticate').addClass('unactive');
+						$('#authenticate').remove();
 						$('#processuser').append(resp.data);
+						$('.modal-backdrop.fade.show').remove();
 					}else{
-						$('#msgerror').removeClass('unactive');
-						$('#msgerror').text(resp.msg);
+						addMsgError(resp.msg);
 					}
 				},
 				error:function (resp) {
-					$('#msgerror').removeClass('unactive');
-					$('#msgerror').text("Login error");
+					addMsgError("Login Error!");
 				}
 			})
 		});
 		$('#RegisterHere').click(function(event) {
+			clearMsg();
 			$('#frmLogin').addClass('unactive');
 			$('#frmRegister').removeClass('unactive');
 			return false;
 		});
 		$('#LoginHere').click(function(event) {
+			clearMsg();
 			$('#frmRegister').addClass('unactive');
 			$('#frmLogin').removeClass('unactive');
 			return false;
