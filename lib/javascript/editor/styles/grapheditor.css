@@ -328,7 +328,7 @@ div.mxWindow .geButton {
 	background-color: #f8f9fa;
 }
 .geSidebarContainer {
-	background:#ffffff;
+	background:#E2E2E2;
 	overflow:hidden;
 	position:absolute;
 	overflow:auto;
@@ -407,8 +407,9 @@ div.mxWindow .geButton {
 	_filter:progid:DXImageTransform.Microsoft.DropShadow(OffX=2, OffY=2, Color='#d5d5d5', Positive='true');
 }
 .geFooterContainer {
-	background:#e5e5e5;
+	background:#0081C6;
 	border-top:1px solid #c0c0c0;
+	height: 100px;
 }
 .geFooterContainer a {
 	display:inline-block;
