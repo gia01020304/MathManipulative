@@ -39,15 +39,11 @@
 .pen-color.pink{
 	background: pink;
 }
-/*#geBackgroundPage{
-	top: 0!important;
-	left: 0!important;
-	width: 100%!important;
-	height: 100%!important;
+.manageruser{
+	z-index: 100;
+	position: absolute;
+	right: 17px;
 }
-#geDiagramContainer svg{
-	min-height: unset!important;
-	min-width: unset!important;
-	width: 100%!important;
-	height: 100%!important;
-}*/
+.unactive{
+	display: none;
+}
