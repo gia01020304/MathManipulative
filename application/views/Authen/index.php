@@ -58,6 +58,12 @@
 									<input type="password" class="form-control" id="PasswordRegister" name="PasswordRegister">
 								</div>
 							</div>
+							<div class="form-group row">
+								<label for="PasswordRegister" class="col-12 col-md-2 form-control-label">Confirm Password</label>
+								<div class="col-10 col-md-6">
+									<input type="password" class="form-control" id="PasswordConfirmRegister" name="PasswordRegister">
+								</div>
+							</div>
 						</form>
 						<p class="text-center">REGISTERED? <span style="color: red"><a href="#" id="LoginHere">Login</a></span></p>
 						<div id="footer" class="float-right">
@@ -70,6 +76,10 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+		$('#popupLogin').on('show.bs.modal', function (e) {
+			$('#frmRegister').addClass('unactive');
+			$('#frmLogin').removeClass('unactive');
+		})
 		$('#btnLogin').click(function(event) {
 			$.ajax({
 				url: '<?php echo site_url("AuthenticateCL/Login") ?>',

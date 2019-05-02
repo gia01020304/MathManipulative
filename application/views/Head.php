@@ -14,6 +14,7 @@
  <script type="text/javascript">
 	mxBasePath = './lib/javascript/src';
 	var drawFree=false;
+	var editor=null;
  </script>
 
 <script type="text/javascript" src="./lib/javascript/editor/js/Init.js"></script>
