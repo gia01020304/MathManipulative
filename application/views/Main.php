@@ -7,6 +7,15 @@
 	?>
 </head>
 <body class="geEditor">
+	<div id="processuser">
+		<?php
+		if (!isset($this->session->userdata['logged_in'])) {
+			$this->load->view('Authen/index');
+		}else{
+			$this->load->view('Authen/usermanager');
+		}
+		?>
+	</div>
 	<?php
 	if (isset($subview)) {
 		$this->load->view($subview);

@@ -3,9 +3,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- other framework -->
 <script type="text/javascript" src="./lib/jquery.js"></script>
+<script type="text/javascript" src="./lib/bootstrap-4.3.1/js/popper.min.js"></script>
 <script type="text/javascript" src="./lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="./lib/bootstrap-4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="./lib/1.css">
+  <link href="./lib/fontawesome-free-5.8.1/css/all.css" rel="stylesheet"> <!--load all styles -->
+
 <!-- framework mxGraph -->
 <link rel="stylesheet" type="text/css" href="./lib/javascript/editor/styles/grapheditor.css">
  <script type="text/javascript">
