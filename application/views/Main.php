@@ -7,6 +7,7 @@
 	?>
 </head>
 <body class="geEditor">
+	<div class="loading">Loading&#8230;</div>
 	<div id="processuser">
 		<?php
 		if (!isset($this->session->userdata['logged_in'])) {
@@ -40,27 +41,14 @@
 </body>
 
 <script type="text/javascript">
-	$('#btnShared').click(function(event) {
-		$('#popup-publish .modal-body').empty();
-		$.ajax({
-			url: '<?php echo site_url('ShareCL/GetAllOfUser') ?>',
-			type: 'POST',
-			dataType: 'json',
-			success:function (resp) {
-				$('#popup-publish').modal('show');
-				$('#popup-publish .modal-body').append(resp.data);
-			},
-			error:function (resp) {
-				alert("Error!");
-			}
-		})
-	});
+	
 	$('#btnShare').click(function(event) {
 		$('#popup-publish .modal-body').empty();
 		if ($('#user').length==0) {
 			$('#popupLogin').modal('show');
 			addMsgError("You need to login to use the function!");	
 		}else{
+			triggerSpinner();
 			$.ajax({
 				url: '<?php echo site_url('ShareCL/AddShare') ?>',
 				type: 'POST',
@@ -81,7 +69,9 @@
 					alert("Share Error!");
 				}
 			})
-			
+			.always(function (argument) {
+				removeSpinner();
+			})
 		}
 	});
 </script>

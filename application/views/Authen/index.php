@@ -22,20 +22,20 @@
 							<div class="form-group row">
 								<label for="UserName" class="col-12 col-md-3 form-control-label">User Name</label>
 								<div class="col-10 col-md-6">
-									<input type="text" class="form-control" id="UserName" name="UserName" required >
+									<input tabindex="1" type="text" class="form-control" id="UserName" name="UserName" required >
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="Password" class="col-12 col-md-3 form-control-label">Password</label>
 								<div class="col-10 col-md-6">
-									<input type="password" class="form-control" id="Password" name="Password" required>
+									<input tabindex="2" type="password" class="form-control" id="Password" name="Password" required>
 								</div>
 							</div>
 						</form>
 						<p class="text-center">NOT REGISTERED? <span style="color: red"><a href="#" id="RegisterHere">REGISTER HERE</a></span></p>
 						<div id="footer" class="float-right">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary" id="btnLogin">Login</button> 
+							<button tabindex="3" type="button" class="btn btn-primary" id="btnLogin">Login</button> 
 						</div>
 					</div>
 					<div id="frmRegister" class="unactive">
@@ -43,32 +43,32 @@
 							<div class="form-group row">
 								<label for="EmailRegister" class="col-12 col-md-3 form-control-label">Email</label>
 								<div class="col-10 col-md-6">
-									<input type="email" class="form-control" id="EmailRegister" name="EmailRegister" >
+									<input tabindex="4" type="email" class="form-control" id="EmailRegister" name="EmailRegister" >
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="UserNameRegister" class="col-12 col-md-3 form-control-label">User Name</label>
 								<div class="col-10 col-md-6">
-									<input type="text" class="form-control" id="UserNameRegister" name="UserNameRegister" >
+									<input tabindex="5" type="text" class="form-control" id="UserNameRegister" name="UserNameRegister" >
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="PasswordRegister" class="col-12 col-md-3 form-control-label">Password</label>
 								<div class="col-10 col-md-6">
-									<input type="password" class="form-control" id="PasswordRegister" name="PasswordRegister">
+									<input tabindex="6" type="password" class="form-control" id="PasswordRegister" name="PasswordRegister">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="PasswordRegister" class="col-12 col-md-3 form-control-label">Confirm Password</label>
 								<div class="col-10 col-md-6">
-									<input type="password" class="form-control" id="PasswordConfirmRegister" name="PasswordRegister">
+									<input tabindex="7" type="password" class="form-control" id="PasswordConfirmRegister" name="PasswordRegister">
 								</div>
 							</div>
 						</form>
 						<p class="text-center">REGISTERED? <span style="color: red"><a href="#" id="LoginHere">Login</a></span></p>
 						<div id="footer" class="float-right">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-primary" id="btnRegister">Register</button> 
+							<button tabindex="8" type="button" class="btn btn-primary" id="btnRegister">Register</button> 
 						</div>
 					</div>
 				</div>
@@ -110,6 +110,7 @@
 				addMsgError(msg);
 				return false;
 			}
+			triggerSpinner();
 			$.ajax({
 				url: '<?php echo site_url('AuthenticateCL/Register') ?>',
 				type: 'POST',
@@ -133,6 +134,8 @@
 				error:function (resp) {
 					addMsgError("Register Error!");
 				}
+			}).always(function (argument) {
+				removeSpinner();
 			})
 		});
 		$('#btnLogin').click(function(event) {
@@ -151,7 +154,7 @@
 				addMsgError(msg);
 				return false;
 			}
-			
+			triggerSpinner();
 			$.ajax({
 				url: '<?php echo site_url("AuthenticateCL/Login") ?>',
 				type: 'POST',
@@ -174,6 +177,8 @@
 				error:function (resp) {
 					addMsgError("Login Error!");
 				}
+			}).always(function (argument) {
+				removeSpinner();
 			})
 		});
 		$('#RegisterHere').click(function(event) {
