@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class AdminCL extends CI_Controller {
+class ConfigCL extends CI_Controller {
 	public function __construct()
 	{
-		parent::__construct();
+                parent::__construct();
 		$this->load->model('UsersModel');
 	}
 	public function index()
@@ -17,8 +17,15 @@ class AdminCL extends CI_Controller {
         // } else {
         //     $this->load->view('admin');
         // }
-        $this->load->view('admin');
-	}
+        $pageName = "Config page";
+        $subView = "admins/config";
+        $data['pageName'] = $pageName;
+        $data['subView'] = $subView;
+        $this->load->view('admin',$data);
+        }
+        public function save(){
+                echo "Hello world";
+        }
 
 }
 

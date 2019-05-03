@@ -252,9 +252,6 @@ a:focus {
   padding: 15px 15px;
   font-family: fontAwesome;
 }
-.main-header .sidebar-toggle:before {
-  content: "\f0c9";
-}
 .main-header .sidebar-toggle:hover {
   color: #fff;
 }
@@ -297,11 +294,9 @@ a:focus {
 }
 .main-header .logo .logo-lg {
   display: block;
-  color: white;
 }
 .main-header .logo .logo-mini {
   display: none;
-  color: white;
 }
 .main-header .navbar-brand {
   color: #fff;

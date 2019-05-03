@@ -410,6 +410,7 @@ div.mxWindow .geButton {
 	background:#0081C6;
 	border-top:1px solid #c0c0c0;
 	height: 100px;
+	z-index: 1;
 }
 .geFooterContainer a {
 	display:inline-block;
