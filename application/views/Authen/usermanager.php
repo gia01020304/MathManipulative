@@ -11,6 +11,7 @@
  	</div>
  	<script type="text/javascript">
  		$('#btnLogout').click(function(event) {
+ 			clearMsgParent();
  			triggerSpinner();
  			$.ajax({
  				url: '<?php echo site_url('AuthenticateCL/Logout') ?>',
@@ -21,11 +22,11 @@
  						$('#processuser').append(response.data);
  						$('#user').remove();
  					}else{
- 						alert(response.msg);
+ 						addMsgErrorParent(response.msg);
  					}
  				},
  				error:function (response) {
- 					alert("Logout error");
+ 					addMsgErrorParent("Logout error");
  				}
  			}).always(function (argument) {
 				removeSpinner();
@@ -34,7 +35,7 @@
  			
  		});
  		$('#btnShared').click(function(event) {
- 			debugger;
+ 			clearMsgParent();
  			$('#popup-publish .modal-body').empty();
  			triggerSpinner();
  			$.ajax({
@@ -46,7 +47,7 @@
  					$('#popup-publish .modal-body').append(resp.data);
  				},
  				error:function (resp) {
- 					alert("Error!");
+ 					addMsgErrorParent("Error!");
  				}
  			}).always(function (argument) {
 				removeSpinner();

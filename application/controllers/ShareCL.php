@@ -12,6 +12,48 @@ class ShareCL extends CI_Controller {
 	{
 		
 	}
+	public function SaveShare()
+	{
+		header('Content-Type: application/json');
+		if (!isset($this->session->userdata['logged_in'])) {
+			$arr = array(
+				"success"=>false,
+				"msg"=>"You need to login to use the function!"
+			);  
+			echo json_encode( $arr);
+			return;
+		}
+		$this->form_validation->set_rules('FileName', 'File Name', 'required');
+		if($this->form_validation->run() == FALSE){
+			$arr = array(
+				"success"=>false,
+				"msg"=>validation_errors()
+			);  
+			echo json_encode( $arr);
+			return;
+		}
+		$key=random_string('alnum', 8);
+		$rs=$this->ShareModel->SaveShare(
+			$key,
+			$this->input->post('value'),
+			$this->input->post('FileName'),
+			$this->session->userdata['id_user']
+		);
+		if ($rs) {
+			$arr = array(
+				"success"=>true,
+				"msg"=>"",
+				"data"=>$this->input->post('FileName')
+			); 
+		}else{
+			$arr = array(
+				"success"=>false,
+				"msg"=>""
+			); 
+		}
+		echo json_encode($arr);
+
+	}
 	public function Share($Key)
 	{
 		$rs=$this->ShareModel->GetShared($Key);

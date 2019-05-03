@@ -8,6 +8,15 @@ class ShareModel extends MY_Model {
 		parent::__construct();
 		$this->table='shares';
 	}
+	public function  SaveShare($Key,$Value,$FileName,$IdUser)
+	{
+		$data=array(
+			"key"=>$Key,
+			"value"=>$Value,
+			"iduser"=>$IdUser
+		);
+		return $this->Add($data);
+	}
 	public function GetShared($key)
 	{
 		$this->db->where('key', $key);
