@@ -11,6 +11,7 @@
  	</div>
  	<script type="text/javascript">
  		$('#btnLogout').click(function(event) {
+ 			triggerSpinner();
  			$.ajax({
  				url: '<?php echo site_url('AuthenticateCL/Logout') ?>',
  				type: 'GET',
@@ -26,9 +27,30 @@
  				error:function (response) {
  					alert("Logout error");
  				}
- 			});
+ 			}).always(function (argument) {
+				removeSpinner();
+			});
  			
  			
+ 		});
+ 		$('#btnShared').click(function(event) {
+ 			debugger;
+ 			$('#popup-publish .modal-body').empty();
+ 			triggerSpinner();
+ 			$.ajax({
+ 				url: '<?php echo site_url('ShareCL/GetAllOfUser') ?>',
+ 				type: 'POST',
+ 				dataType: 'json',
+ 				success:function (resp) {
+ 					$('#popup-publish').modal('show');
+ 					$('#popup-publish .modal-body').append(resp.data);
+ 				},
+ 				error:function (resp) {
+ 					alert("Error!");
+ 				}
+ 			}).always(function (argument) {
+				removeSpinner();
+			});
  		});
  	</script>
  </div>
