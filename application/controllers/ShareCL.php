@@ -124,13 +124,9 @@ class ShareCL extends CI_Controller {
 	public function Share($Key)
 	{
 		$rs=$this->ShareModel->GetShared($Key);
-		$idUser=$this->session->userdata['id_user'];
-		if (isset($idUser)&&$idUser==$rs->iduser) {
-			$data["shared"]=$rs;
-			$data["subview"]="Base/index";
-			$this->load->view('Main', $data);
-		}
-		$rs->name='Untitled';
+		if (!array_key_exists('id_user', $this->session->userdata)) {
+			$rs->name='Untitled';
+		}		
 		$data["shared"]=$rs;
 		$data["subview"]="Base/index";
 		$this->load->view('Main', $data);

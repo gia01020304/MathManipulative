@@ -55,11 +55,7 @@ class AuthenticateCL extends CI_Controller {
 	}
 	public function Logout()
 	{
-		// $sess_array = array(
-		// 	'username' => ''
-		// );
-		// $this->session->unset_userdata('logged_in', $sess_array);
-		session_destroy();
+		$this->session->sess_destroy();
 		$arr = array(
 			"success"=>true,
 			"msg"=>"",
@@ -67,21 +63,6 @@ class AuthenticateCL extends CI_Controller {
 		);
 		echo json_encode($arr);
 		return;
-	}
-	public function CheckLogged()
-	{
-		header('Content-Type: application/json');
-		if (!isset($this->session->userdata['logged_in'])) {
-			$view=$this->load->view('Authen/index','',true);
-		}else{
-			$view=$this->load->view('Authen/usermanager','',true);
-		}
-		$arr = array(
-			"success"=>'',
-			"msg"=>"",
-			"data"=>$view
-		); 
-		echo json_encode( $arr);
 	}
 	public function Login()
 	{
