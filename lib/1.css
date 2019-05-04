@@ -1,3 +1,6 @@
+.unset-padding{
+	padding: unset;
+}
 #divmsgparent{
 	padding: unset;
 }

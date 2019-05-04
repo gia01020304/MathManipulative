@@ -50,7 +50,7 @@
 		})();
 		$(document).ready(function() {
 			<?php if (isset($shared)): ?>
-				restore(`<?= $shared->value ?>`)
+				restore(`<?= $shared->value ?>`,`<?= $shared->name ?>`)
 			<?php endif ?>
 		});
 	</script>

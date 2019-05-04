@@ -8,12 +8,39 @@ class ShareModel extends MY_Model {
 		parent::__construct();
 		$this->table='shares';
 	}
+
+	public function UpdateSaveFile($FileName,$IdUSer,$Value)
+	{
+		$this->db->set('value', $Value);
+		$this->db->where('name', $FileName);
+		$this->db->where('iduser', $IdUSer);
+		$this->db->update($this->table);
+		return ($this->db->affected_rows() == -1) ? false : true;
+
+	}
+	public function ShareFile($FileName,$IdUSer)
+	{
+		$this->db->set('isshare', 1);
+		$this->db->where('name', $FileName);
+		$this->db->where('iduser', $IdUSer);
+		$this->db->update($this->table);
+		return ($this->db->affected_rows() == -1) ? false : true;
+	}
+	public function CheckExistFile($IdUSer,$FileName)
+	{
+		$this->db->where('iduser', $IdUSer);
+		$this->db->where('name', $FileName);
+		$query=$this->db->get($this->table);
+		$rs=$query->row();
+		return $rs;
+	}
 	public function  SaveShare($Key,$Value,$FileName,$IdUser)
 	{
 		$data=array(
 			"key"=>$Key,
 			"value"=>$Value,
-			"iduser"=>$IdUser
+			"iduser"=>$IdUser,
+			'name'=>$FileName
 		);
 		return $this->Add($data);
 	}
