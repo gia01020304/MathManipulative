@@ -49,7 +49,7 @@
 					</form>
 				</div>
 			</div>
-		</div>
+		</div>s
 	</div>
 	<div class="mxPopupMenu geToolbarMenu" id="divUrlShare" style="display: none; z-index: 10006;">
 		<table class="mxPopupMenu">
@@ -61,7 +61,7 @@
 					<div class="input-group unset-padding">
 						<input type="text" class="form-control unset-padding" id="inputUrlShare">
 						<div class="input-group-append unset-padding">
-							<button class="far fa-clipboard" type="button"></button>
+							<button class="far fa-clipboard" type="button" title="Click to copy to clipboard" onclick="copyToClipboard(document.getElementById('inputUrlShare'))"></button>
 						</div>
 					</div>
 				</td>

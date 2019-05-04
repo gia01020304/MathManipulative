@@ -9,26 +9,26 @@ class ShareModel extends MY_Model {
 		$this->table='shares';
 	}
 
-	public function UpdateSaveFile($FileName,$IdUSer,$Value)
+	public function UpdateSaveFile($FileName,$IdUser,$Value)
 	{
 		$this->db->set('value', $Value);
 		$this->db->where('name', $FileName);
-		$this->db->where('iduser', $IdUSer);
+		$this->db->where('iduser', $IdUser);
 		$this->db->update($this->table);
 		return ($this->db->affected_rows() == -1) ? false : true;
 
 	}
-	public function ShareFile($FileName,$IdUSer)
+	public function ShareFile($FileName,$IdUser)
 	{
 		$this->db->set('isshare', 1);
 		$this->db->where('name', $FileName);
-		$this->db->where('iduser', $IdUSer);
+		$this->db->where('iduser', $IdUser);
 		$this->db->update($this->table);
 		return ($this->db->affected_rows() == -1) ? false : true;
 	}
-	public function CheckExistFile($IdUSer,$FileName)
+	public function CheckExistFile($IdUser,$FileName)
 	{
-		$this->db->where('iduser', $IdUSer);
+		$this->db->where('iduser', $IdUser);
 		$this->db->where('name', $FileName);
 		$query=$this->db->get($this->table);
 		$rs=$query->row();
@@ -44,9 +44,9 @@ class ShareModel extends MY_Model {
 		);
 		return $this->Add($data);
 	}
-	public function GetShared($key)
+	public function GetShared($Key)
 	{
-		$this->db->where('key', $key);
+		$this->db->where('key', $Key);
 		$query=$this->db->get($this->table);
 		$rs=$query->row();
 		return $rs;
