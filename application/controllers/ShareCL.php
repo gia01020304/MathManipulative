@@ -43,7 +43,7 @@ class ShareCL extends CI_Controller {
 			$arr = array(
 				"success"=>true,
 				"msg"=>"Share Success",
-				"data"=>site_url('ShareCL/Share/').$share->key
+				"data"=>site_url('s/').$share->key
 			); 
 		}else{
 			$arr = array(
@@ -126,7 +126,7 @@ class ShareCL extends CI_Controller {
 		$rs=$this->ShareModel->GetShared($Key);
 		if (!array_key_exists('id_user', $this->session->userdata)) {
 			$rs->name='Untitled';
-		}		
+		}
 		$data["shared"]=$rs;
 		$data["subview"]="Base/index";
 		$this->load->view('Main', $data);
