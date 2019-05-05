@@ -107,13 +107,7 @@
                             <span>Account</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="far fa-file-image"></i>
-                            <span>Your files</span>
-                        </a>
-                    </li>
-                                            <li class="li-item" >
+                            <li class="li-item" >
                                 <a href="#" id="btnMyFile">
                                     <i class="fa fa-file"></i>
                                     <span>My File</span>

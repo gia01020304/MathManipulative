@@ -35,8 +35,8 @@ class ConfigCL extends CI_Controller {
         }
         public function getViewMyFile()
         {
-                $idUser=1;
-                //$idUser=$this->session->userdata['id_user']
+               // $idUser=1;
+                $idUser=$this->session->userdata['id_user'];
                 header('Content-Type: application/json');
                 $rs=$this->ShareModel->GetAllOfUser($idUser);
                 $temp=$this->getwebpageAddress();
