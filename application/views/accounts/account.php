@@ -11,12 +11,12 @@
   <div class="row">
     <form action="<?= base_url()?>" method="post">
       <div class="form-group">
-        <label for="web-link">Email:</label>
-        <input type="text" class="form-control" name="siteWebpageAdress" value="<?=$webpage?>" id="web-link">
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" name="email" value="" id="email">
       </div>
       <div class="form-group">
-        <label for="help-link">Site help link address:</label>
-        <input type="text" value="<?=$helpLink?>" name="siteHelpLinkAddress" class="form-control" id="help-link">
+        <label for="user-name">User name:</label>
+        <input type="text" value="" name="username" class="form-control" id="user-name">
       </div>
       <button type="submit" class="btn btn-default">Save</button>
     </form>

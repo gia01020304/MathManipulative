@@ -99,7 +99,37 @@ class AuthenticateCL extends CI_Controller {
 		
 		echo json_encode( $arr);
 	}
+	public function adminIndex() {
+		$data['subView'] = 'admins/login';
+		$data['pageName'] = 'Login';
+		$this->load->view('admin',$data);
+	}
+	public function adminLogin() {
+		$this->form_validation->set_rules('UserName', 'User Name', 'required');
+		$this->form_validation->set_rules('Password', 'Password', 'required');
+		if($this->form_validation->run() == FALSE){
+			// $arr = array(
+			// 	"success"=>false,
+			// 	"msg"=>validation_errors()
+			// );  
+			// echo json_encode( $arr);
+			return;
+		}
 
+		$rs=$this->UsersModel->CheckAccount(
+			$this->input->post('UserName'),
+			$this->input->post('Password')
+		);
+		if($rs==null){
+			$data['subView'] = 'admins/login';
+			$data['isSaveSuccessful'] = false;
+			$this->load->view('admin', $data);
+		}else{
+			$this->session->set_userdata('logged_in', $rs->username);
+			$this->session->set_userdata('id_user', $rs->id);
+			header('Location:'. base_url() . 'ConfigCL');
+		}
+	}
 }
 
 /* End of file AuthenticateCL.php */
