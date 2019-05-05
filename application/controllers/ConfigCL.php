@@ -28,8 +28,8 @@ class ConfigCL extends CI_Controller {
         }
         public function getViewMyFile()
         {
-                $idUser=1;
-                //$idUser=$this->session->userdata['id_user']
+                // $idUser=1;
+                $idUser=$this->session->userdata['id_user'];
                 header('Content-Type: application/json');
                 $rs=$this->ShareModel->GetAllOfUser($idUser);
                 $temp=$this->getwebpageAddress();
@@ -42,7 +42,8 @@ class ConfigCL extends CI_Controller {
                 $arr = array(
                         "success"=>'',
                         "msg"=>'',
-                        "data"=>$view
+                        "data"=>$view,
+                        "pageName"=>'My File'
                 );  
                 echo json_encode($arr);
                 return;

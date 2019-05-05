@@ -93,10 +93,10 @@
                         <div class="row" id="div-wrap">
 
                             <div class="box contentbody">
-                                <div class="box-header" id="div-title">
+                                <div class="box-header" >
                                     <?php 
                                     if(isset($pageName)){ ?>
-                                        <h3>
+                                        <h3 id="div-title">
                                             <?php
                                             echo $pageName; 
                                             ?>    
@@ -132,6 +132,7 @@
             <script src="<?= base_url() ?>/lib/1.js"></script>
             <script type="text/javascript">
                 $(document).ready(function() {
+                    $('.content-wrapper').css('min-height','');
                     $('#btnMyFile').click(function(event) {
                         event.preventDefault();
                         activeItem(event.target);
@@ -141,6 +142,7 @@
                             type: 'GET',
                             dataType: 'json',
                             success:function (resp) {
+                                $('#div-title').html(resp.pageName);
                                 $('.container-fluid').remove();
                                 $('#div-wrap').append(resp.data);
                             },
@@ -154,8 +156,8 @@
                         
                     });
                      $('#btnConfig').click(function(event) {
-                        event.preventDefault();
-                        activeItem(event.target);
+                        debugger;
+                        window.location.href="<?= site_url('ConfigCL') ?>";
                     });
                 });
                 function activeItem(elt) {
