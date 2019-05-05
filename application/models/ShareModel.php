@@ -8,7 +8,13 @@ class ShareModel extends MY_Model {
 		parent::__construct();
 		$this->table='shares';
 	}
-
+	public function ChangeStatusShare($IdFile,$Status)
+	{
+		$this->db->set('isshare', $Status);
+		$this->db->where('id', $IdFile);
+		$this->db->update($this->table);
+		return ($this->db->affected_rows() == -1) ? false : true;
+	}
 	public function UpdateSaveFile($FileName,$IdUser,$Value)
 	{
 		$this->db->set('value', $Value);

@@ -12,6 +12,34 @@ class ShareCL extends CI_Controller {
 	{
 		
 	}
+	public function ChangeStatusShare()
+	{
+		header('Content-Type: application/json');
+		if (!isset($this->session->userdata['logged_in'])) {
+			$arr = array(
+				"success"=>false,
+				"msg"=>"You need to login to use the function!"
+			);  
+			echo json_encode( $arr);
+			return;
+		}
+		$idFile=$this->input->post('idFile');
+		$status=$this->input->post('status');
+		$rs=$this->ShareModel->ChangeStatusShare($idFile,$status);
+		if ($rs) {
+			$arr = array(
+				"success"=>true,
+				"msg"=>''
+			);  
+		}else{
+			$arr = array(
+				"success"=>false,
+				"msg"=>''
+			);  
+		}
+		echo json_encode( $arr);
+		return;
+	}
 	public function UpdateShare()
 	{
 		header('Content-Type: application/json');
@@ -126,6 +154,10 @@ class ShareCL extends CI_Controller {
 		$rs=$this->ShareModel->GetShared($Key);
 		if (!array_key_exists('id_user', $this->session->userdata)) {
 			$rs->name='Untitled';
+		}else{
+			if ($this->session->userdata['id_user']==$rs->iduser) {
+				$rs->isshare=1;
+			}
 		}
 		$data["shared"]=$rs;
 		$data["subview"]="Base/index";

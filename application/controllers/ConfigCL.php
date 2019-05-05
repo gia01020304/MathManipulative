@@ -30,9 +30,22 @@ class ConfigCL extends CI_Controller {
         {
                 $idUser=1;
                 //$idUser=$this->session->userdata['id_user']
-
+                header('Content-Type: application/json');
                 $rs=$this->ShareModel->GetAllOfUser($idUser);
-
+                $temp=$this->getwebpageAddress();
+                $domain=substr($temp,-1)=='/'?substr($temp, 0, -1):$temp;
+                foreach ($rs as $value) {
+                        $value->url=$domain.'/s/'.$value->key;
+                }
+                $data['shares']=$rs;
+                $view=$this->load->view('admins/myfile', $data, true);
+                $arr = array(
+                        "success"=>'',
+                        "msg"=>'',
+                        "data"=>$view
+                );  
+                echo json_encode($arr);
+                return;
         }
         public function save(){
                 // save file

@@ -90,10 +90,10 @@
                     <!-- Main content -->
                     <section class="content">
                         <!-- Small boxes (Stat box) -->
-                        <div class="row">
+                        <div class="row" id="div-wrap">
 
                             <div class="box contentbody">
-                                <div class="box-header">
+                                <div class="box-header" id="div-title">
                                     <?php 
                                     if(isset($pageName)){ ?>
                                         <h3>
@@ -137,13 +137,19 @@
                         activeItem(event.target);
                         triggerSpinner()
                         $.ajax({
-                            url: '<?= site_url('ConfigCL/') ?>',
-                            type: 'default GET (Other values: POST)',
-                            dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-                            data: {param1: 'value1'},
+                            url: '<?= site_url('ConfigCL/getViewMyFile') ?>',
+                            type: 'GET',
+                            dataType: 'json',
+                            success:function (resp) {
+                                $('.container-fluid').remove();
+                                $('#div-wrap').append(resp.data);
+                            },
+                            error:function (resp) {
+                                alert('Load page My File Error');
+                            }
                         })
                         .always(function() {
-                            console.log("complete");
+                            removeSpinner();
                         });
                         
                     });
