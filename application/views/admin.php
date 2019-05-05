@@ -20,7 +20,7 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/_all-skins.min.css">
-  
+    <link rel="icon"  href="<?= base_url() ?>/lib/images/favicon.png">
 
     <!-- Google Font -->
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->

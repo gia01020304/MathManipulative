@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="<?= base_url() ?>/lib/bootstrap-4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?= base_url() ?>/lib/1.css">
 <link href="<?= base_url() ?>/lib/fontawesome-free-5.8.1/css/all.css" rel="stylesheet"> <!--load all styles -->
+<link rel="icon"  href="<?= base_url() ?>/lib/images/favicon.png">
 
 <!-- framework mxGraph -->
 <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/lib/javascript/editor/styles/grapheditor.css">
