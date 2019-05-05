@@ -18,17 +18,19 @@
 					<div class="alert alert-success unactive" role="alert" id="msgsuccess">
 					</div>
 					<div id="frmLogin" class="">
-						<form id="frmlogin">
+						<form id="frmlogin" autocomplete="off">
+							<input style="display:none" type="text" name="fakeusernameremembered"/>
+							<input style="display:none" type="password" name="fakepasswordremembered"/>
 							<div class="form-group row">
 								<label for="UserName" class="col-12 col-md-3 form-control-label">User Name</label>
 								<div class="col-10 col-md-6">
-									<input tabindex="1" type="text" class="form-control" id="UserName" name="UserName" required >
+									<input tabindex="1" type="text" class="form-control" id="UserName" name="UserName" required autoComplete="off">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="Password" class="col-12 col-md-3 form-control-label">Password</label>
 								<div class="col-10 col-md-6">
-									<input tabindex="2" type="password" class="form-control" id="Password" name="Password" required>
+									<input tabindex="2" type="password" class="form-control" id="Password" name="Password" required autocomplete="new-password">
 								</div>
 							</div>
 						</form>
@@ -39,7 +41,9 @@
 						</div>
 					</div>
 					<div id="frmRegister" class="unactive">
-						<form>
+						<form autocomplete="off" id="dsad">
+							<input style="display:none" type="text" name="fakeusernameremembered"/>
+							<input style="display:none" type="password" name="fakepasswordremembered"/>
 							<div class="form-group row">
 								<label for="EmailRegister" class="col-12 col-md-3 form-control-label">Email</label>
 								<div class="col-10 col-md-6">
@@ -49,13 +53,13 @@
 							<div class="form-group row">
 								<label for="UserNameRegister" class="col-12 col-md-3 form-control-label">User Name</label>
 								<div class="col-10 col-md-6">
-									<input tabindex="5" type="text" class="form-control" id="UserNameRegister" name="UserNameRegister" >
+									<input tabindex="5" type="text" class="form-control" id="UserNameRegister" name="UserNameRegister" autoComplete="off">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="PasswordRegister" class="col-12 col-md-3 form-control-label">Password</label>
 								<div class="col-10 col-md-6">
-									<input tabindex="6" type="password" class="form-control" id="PasswordRegister" name="PasswordRegister">
+									<input tabindex="6" type="password" class="form-control" id="PasswordRegister" name="PasswordRegister" autoComplete="new-password">
 								</div>
 							</div>
 							<div class="form-group row">
@@ -89,19 +93,19 @@
 			var isValid=true;
 			var msg="";
 			if ($('#EmailRegister').val()==="") {
-				msg+="Email is required. ";
+				msg+="Email is required. <br />";
 				isValid=false;
 			}
 			if ($('#UserNameRegister').val()==="") {
-				msg+="UserName is required. ";
+				msg+="UserName is required. <br />";
 				isValid=false;
 			}
 			if ($('#PasswordRegister').val()==="") {
-				msg+="Password is required. ";
+				msg+="Password is required. <br />";
 				isValid=false;
 			}
 			if ($('#PasswordConfirmRegister').val()==="") {
-				msg+="Password Confirm is required. ";
+				msg+="Password Confirm is required. <br />";
 				isValid=false;
 			}
 			if (!isValid) {
@@ -146,11 +150,11 @@
 			var isValid=true;
 			var msg="";
 			if ($('#UserName').val()==="") {
-				msg+="UserName is required. ";
+				msg+="UserName is required. <br />";
 				isValid=false;
 			}
 			if ($('#Password').val()==="") {
-				msg+="Password is required. ";
+				msg+="Password is required. <br />";
 				isValid=false;
 			}
 			if (!isValid) {
