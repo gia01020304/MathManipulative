@@ -22,14 +22,13 @@ class AuthenticateCL extends CI_Controller {
 			echo json_encode( $arr);
 			return;
 		}
-		$rs=$this->UsersModel->CheckExistUserNameOrEmail(
-			$this->input->post('Email'),
+		$rs=$this->UsersModel->CheckExistUserName(
 			$this->input->post('UserName')
 		);
 		if ($rs!=null) {
 			$arr = array(
 				"success"=>false,
-				"msg"=>"User Name or Email already exist"
+				"msg"=>"User Name already exist!"
 			); 
 			echo json_encode( $arr);
 			return; 
