@@ -10,23 +10,24 @@
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/AdminLTE.css">
     <link rel="stylesheet" href="<?= base_url() ?>/lib/1.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
+     folder instead of downloading all of them to reduce the load. -->
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/_all-skins.min.css">
-    <link rel="icon"  href="<?= base_url() ?>/lib/images/favicon.png">
+    <link rel="icon" href="<?= base_url() ?>/lib/images/favicon.png">
 
     <!-- Google Font -->
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
     <script type="text/javascript">
-	    var pathRelative='<?= base_url() ?>';
+        var pathRelative = '<?= base_url() ?>';
     </script>
     <?php 
         $isAdmin = false;
@@ -44,6 +45,7 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
+    <div class="loading">Loading&#8230;</div>
     <div class="wrapper" id="main-section">
 
         <header class="main-header">
@@ -63,23 +65,23 @@
                 </a>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                    <?php
+                        <?php
 		            if (!isset($this->session->userdata['logged_in'])) { ?>
-	                    <li id="login">
+                        <li id="login">
                             <a href="#">
                                 <i class="fas fa-sign-in-alt"></i>
                                 <span>Login</span>
                             </a>
                         </li>
-                    <?php	
+                        <?php	
                     } else {?>
-                            <li id="logout">
-                                <a href="#">
-                                    <i class="fas fa-sign-out-alt"></i>
-                                    <span>Logout</span>
+                        <li id="logout">
+                            <a href="#">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
                             </a>
                         </li>
-                    <?php }?>
+                        <?php }?>
                     </ul>
                 </div>
             </nav>
@@ -106,10 +108,10 @@
                             <span>Account</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="far fa-file-image"></i>
-                            <span>Your files</span>
+                    <li class="li-item">
+                        <a href="#" id="btnMyFile">
+                            <i class="fa fa-file"></i>
+                            <span>My File</span>
                         </a>
                     </li>
                 </ul>
@@ -117,44 +119,39 @@
             <!-- /.sidebar -->
         </aside>
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row" id="div-wrap">
 
-            <!-- Main content -->
-            <section class="content">
-                <!-- Small boxes (Stat box) -->
-                <div class="row">
-                   
-                        <div class="box contentbody">
-                            <div class="box-header">
-                                <?php 
-                                if(isset($pageName)){ ?>
-                                <h3>
-                                    <?php
-                                        echo $pageName; 
-                                    ?>    
-                                </h3>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
+                <div class="box contentbody">
+                    <div class="box-header" id="div-title">
                         <?php 
-                        if(isset($subView) && isset($data)) {
-                            $this->load->view($subView,$data);
-                        } else if (isset($subView) && !isset($data)) {
-                            $this->load->view($subView);
-                        }
-                        ?>
+                                    if(isset($pageName)){ ?>
+                        <h3>
+                            <?php
+                                            echo $pageName; 
+                                            ?>
+                        </h3>
+                        <?php
+                                    }
+                                    ?>
                     </div>
+                    <!-- /.box-body -->
+                </div>
+                <?php 
+                            if(isset($subView) && isset($data)) {
+                                $this->load->view($subView,$data);
+                            } else if (isset($subView) && !isset($data)) {
+                                $this->load->view($subView);
+                            }
+                            ?>
+            </div>
 
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-
+        </section>
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
     <!-- ./wrapper -->
     <script src="<?= base_url() ?>/lib/jquery.js"></script>
     <!-- Bootstrap 3.3.7 -->
@@ -163,7 +160,41 @@
     <script src="<?= base_url() ?>/lib/admins/adminlte.min.js"></script>
     <script src="<?= base_url() ?>/lib/admins/admin.js"></script>
     <script src="<?= base_url() ?>/lib/1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btnMyFile').click(function (event) {
+                event.preventDefault();
+                activeItem(event.target);
+                triggerSpinner()
+                $.ajax({
+                    url: '<?= site_url('ConfigCL/getViewMyFile') ?>',
+                            type: 'GET',
+                    dataType: 'json',
+                    success: function (resp) {
+                        $('.container-fluid').remove();
+                        $('#div-wrap').append(resp.data);
+                    },
+                    error: function (resp) {
+                        alert('Load page My File Error');
+                    }
+                })
+                    .always(function () {
+                        removeSpinner();
+                    });
 
+            });
+            $('#btnConfig').click(function (event) {
+                event.preventDefault();
+                activeItem(event.target);
+            });
+        });
+        function activeItem(elt) {
+            $('.li-item').each(function (index, el) {
+                $(el).removeClass('active');
+            });
+            $(elt).closest('li').addClass('active');
+        }
+    </script>
 </body>
 
 </html>

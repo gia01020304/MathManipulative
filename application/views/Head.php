@@ -35,7 +35,6 @@
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Menus.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Toolbar.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Dialogs.js"></script>
-<script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Footer.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/svg/svg.min.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/svg/dist/svg.draw.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/1.js"></script>

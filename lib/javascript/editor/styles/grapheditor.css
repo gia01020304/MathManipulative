@@ -407,10 +407,8 @@ div.mxWindow .geButton {
 	_filter:progid:DXImageTransform.Microsoft.DropShadow(OffX=2, OffY=2, Color='#d5d5d5', Positive='true');
 }
 .geFooterContainer {
-	background:#0081C6;
+	background:#e5e5e5;
 	border-top:1px solid #c0c0c0;
-	height: 100px;
-	z-index: 1;
 }
 .geFooterContainer a {
 	display:inline-block;

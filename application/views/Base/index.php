@@ -50,7 +50,12 @@
 		})();
 		$(document).ready(function() {
 			<?php if (isset($shared)): ?>
-				restore(`<?= $shared->value ?>`,`<?= $shared->name ?>`)
+				<?php if ($shared->isshare==1): ?>
+					restore(`<?= $shared->value ?>`,`<?= $shared->name ?>`);
+					<?php else: ?>
+					alert('The file has not been shared');
+				<?php endif ?>
 			<?php endif ?>
 		});
 	</script>
+	

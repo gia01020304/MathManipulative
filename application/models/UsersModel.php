@@ -25,6 +25,13 @@ class UsersModel extends MY_Model {
 		);
 		return $this->Add($data);
 	}
+	public function CheckExistUserName($UserName)
+	{
+		$this->db->where('username', $UserName);
+		$query=$this->db->get($this->table);
+		$rs=$query->row();
+		return $rs;	
+	}
 	public function CheckExistUserNameOrEmail($Email,$UserName)
 	{
 		$this->db->where('email', $Email);
