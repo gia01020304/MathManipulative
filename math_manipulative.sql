@@ -1,6 +1,6 @@
 /*
-SQLyog Professional v13.1.1 (64 bit)
-MySQL - 10.1.38-MariaDB : Database - mathmanipulative
+SQLyog Community v13.0.1 (64 bit)
+MySQL - 5.7.21 : Database - mathmanipulative
 *********************************************************************
 */
 
@@ -164,7 +164,44 @@ insert  into `ci_sessions`(`id`,`ip_address`,`timestamp`,`data`) values
 ('am1iqh0to60pof4s7qjkvj9nbsavbmdo','::1',1556951631,'__ci_last_regenerate|i:1556951631;'),
 ('frbg559bfg0ggjg6sum0km4ck9qpm4s8','::1',1556951964,'__ci_last_regenerate|i:1556951964;logged_in|s:5:\"user1\";'),
 ('ci4q2qadremrreiujghehn5qnoe006gs','::1',1556952325,'__ci_last_regenerate|i:1556952325;logged_in|s:5:\"user1\";'),
-('ha62diku5977t6lm3a0s7uetlmmcrdf0','::1',1556952669,'__ci_last_regenerate|i:1556952669;');
+('ha62diku5977t6lm3a0s7uetlmmcrdf0','::1',1556952669,'__ci_last_regenerate|i:1556952669;'),
+('688tgv2ji3case4orqhlkuu7o6mptmc2','::1',1557025928,'__ci_last_regenerate|i:1557025928;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('ifbpbg74dc77ltudfu20s3sek7d18jvt','::1',1557026447,'__ci_last_regenerate|i:1557026447;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('atm2v1pvrrut0a741819gbafprjj78li','::1',1557026779,'__ci_last_regenerate|i:1557026779;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('rec32b2lsdppj2uaksk7kimudfqstkol','::1',1557027086,'__ci_last_regenerate|i:1557027086;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('cvs0n9kk4as435o8ul38ko780jj655l0','::1',1557027516,'__ci_last_regenerate|i:1557027516;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('hvgom5gp9ot1dd0ciop0k4ulq6s1thge','::1',1557027922,'__ci_last_regenerate|i:1557027922;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('0f65gnc2jgpjmco5ld2uup2t9tui5l8e','::1',1557028361,'__ci_last_regenerate|i:1557028361;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('cnmr9on01s7so1q26bac7507ginepe2e','::1',1557028694,'__ci_last_regenerate|i:1557028694;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('3gh9qejh28obrko0p10a3sa3o3npf70h','::1',1557029068,'__ci_last_regenerate|i:1557029068;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('spg8bf9t827o4tfd0fn4o04jjkbeg3r3','::1',1557029897,'__ci_last_regenerate|i:1557029897;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('o4kvd0rne3gr8330chkok7ch3fbejm5g','::1',1557030312,'__ci_last_regenerate|i:1557030312;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('bbo6249ho43bmm9rteuuas4bjj5dtqmo','::1',1557030640,'__ci_last_regenerate|i:1557030640;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('2f3mkbojuq8vjmprvtlk8vtpaapto3k0','::1',1557030943,'__ci_last_regenerate|i:1557030943;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('17bt0llcr3jt0t9siv1fl993hn6p4pmf','::1',1557031259,'__ci_last_regenerate|i:1557031259;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('0luqituugqh1a06rgcpuomopgf05je8c','::1',1557031736,'__ci_last_regenerate|i:1557031736;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('og228hj0g5gp3cuk64uece7aa74hh0c4','::1',1557032381,'__ci_last_regenerate|i:1557032381;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('qme5b28d4o7l46note69atdq7n69e921','::1',1557032764,'__ci_last_regenerate|i:1557032764;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('8jim10r2ec6l592bfio9r700178g13jo','::1',1557033183,'__ci_last_regenerate|i:1557033183;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('epnnp6duvcbsbkjknc9jfgqi36edo459','::1',1557033790,'__ci_last_regenerate|i:1557033183;logged_in|s:5:\"user1\";id_user|s:1:\"1\";');
+
+/*Table structure for table `config` */
+
+DROP TABLE IF EXISTS `config`;
+
+CREATE TABLE `config` (
+  `key` varchar(20) NOT NULL,
+  `value` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+/*Data for the table `config` */
+
+insert  into `config`(`key`,`value`) values 
+('siteLogo','Hello'),
+('siteWebpageAdress','King of gotham 1123'),
+('siteHelpLinkAddress','Vo lam chi ton bao dao do long'),
+('siteFavicon','Hello');
 
 /*Table structure for table `shares` */
 
@@ -178,7 +215,7 @@ CREATE TABLE `shares` (
   `name` varchar(255) DEFAULT NULL,
   `isshare` bit(1) DEFAULT b'0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=latin1;
 
 /*Data for the table `shares` */
 
@@ -203,7 +240,9 @@ insert  into `shares`(`id`,`key`,`value`,`iduser`,`name`,`isshare`) values
 (54,'9YUS7KkR','<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/></root></mxGraphModel><draw></draw>',1,'cxzcxzcx',''),
 (55,'iHlqtgUu','<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"-1\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#D13433;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"1\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#E4C564;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"70\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"x&lt;sup&gt;2&lt;/sup&gt;\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#6DB0CE;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"120\" width=\"80\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"x\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#2C883E;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"220\" width=\"20\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"-x&lt;sup&gt;2&lt;/sup&gt;\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#D13433;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"320\" width=\"80\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"-x\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#D13433;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"420\" width=\"20\" height=\"80\" as=\"geometry\"/></mxCell></root></mxGraphModel><draw></draw>',1,'acsac',''),
 (56,'5u6qYAko','<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"x\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#2C883E;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"20\" width=\"20\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"-1\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#D13433;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"120\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"1\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#E4C564;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"170\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"x&lt;sup&gt;2&lt;/sup&gt;\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#6DB0CE;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"220\" width=\"80\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"6\" value=\"-x&lt;sup&gt;2&lt;/sup&gt;\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#D13433;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"320\" width=\"80\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"7\" value=\"-x\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#D13433;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"420\" width=\"20\" height=\"80\" as=\"geometry\"/></mxCell></root></mxGraphModel><draw></draw>',1,'cxzcxz',''),
-(57,'EUe5rwZH','<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"-1\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#D13433;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"110\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"x\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#2C883E;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"160\" width=\"20\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"x&lt;sup&gt;2&lt;/sup&gt;\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#6DB0CE;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"260\" width=\"80\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"1\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#E4C564;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"360\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel><draw></draw>',1,'cxzcsad','');
+(57,'EUe5rwZH','<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/><mxCell id=\"2\" value=\"-1\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#D13433;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"110\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell><mxCell id=\"3\" value=\"x\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#2C883E;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"160\" width=\"20\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"4\" value=\"x&lt;sup&gt;2&lt;/sup&gt;\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#6DB0CE;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"260\" width=\"80\" height=\"80\" as=\"geometry\"/></mxCell><mxCell id=\"5\" value=\"1\" style=\"html=1;whiteSpace=wrap;aspect=fixed;fontFamily=Comic Sans MS;fontStyle=1;fillColor=#E4C564;\" vertex=\"1\" parent=\"1\"><mxGeometry x=\"20\" y=\"360\" width=\"30\" height=\"30\" as=\"geometry\"/></mxCell></root></mxGraphModel><draw></draw>',1,'cxzcsad',''),
+(58,'0pLqtTkQ','<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/></root></mxGraphModel><draw></draw>',1,'vcxvcxvcx',''),
+(59,'qLH72lpO','<mxGraphModel><root><mxCell id=\"0\"/><mxCell id=\"1\" parent=\"0\"/></root></mxGraphModel><draw></draw>',1,'Name','\0');
 
 /*Table structure for table `users` */
 

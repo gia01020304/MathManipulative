@@ -5,10 +5,11 @@ class ConfigCL extends CI_Controller {
 	public function __construct()
 	{
                 parent::__construct();
-		$this->load->model('ConfigModel');
-	}
-	public function index($data = [])
-	{
+                $this->load->model('ConfigModel');
+                $this->load->model('ShareModel');
+        }
+        public function index($data = [])
+        {
         // // login
         // //
         // $isLoggedIn = false;
@@ -17,13 +18,21 @@ class ConfigCL extends CI_Controller {
         // } else {
         //     $this->load->view('admin');
         // }
-        $pageName = "Config page";
-        $subView = "admins/config";
-        $data['pageName'] = $pageName;
-        $data['subView'] = $subView;
-        $data['webpage'] = $this->getwebpageAddress();
-        $data['helpLink'] = $this->gethelpLinkAddress();
-        $this->load->view('admin',$data);
+                $pageName = "Config page";
+                $subView = "admins/config";
+                $data['pageName'] = $pageName;
+                $data['subView'] = $subView;
+                $data['webpage'] = $this->getwebpageAddress();
+                $data['helpLink'] = $this->gethelpLinkAddress();
+                $this->load->view('admin',$data);
+        }
+        public function getViewMyFile()
+        {
+                $idUser=1;
+                //$idUser=$this->session->userdata['id_user']
+
+                $rs=$this->ShareModel->GetAllOfUser($idUser);
+
         }
         public function save(){
                 // save file
