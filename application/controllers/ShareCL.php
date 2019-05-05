@@ -36,7 +36,7 @@ class ShareCL extends CI_Controller {
 		$idUser=$this->session->userdata['id_user'];
 		$rs=$this->ShareModel->ShareFile(
 			$FileName,
-			$idUser,
+			$idUser
 		);
 		if ($rs) {
 			$share=$this->ShareModel->CheckExistFile($idUser,$FileName);
