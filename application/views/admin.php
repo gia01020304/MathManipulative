@@ -152,6 +152,8 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+
+    </div>
     <!-- ./wrapper -->
     <script src="<?= base_url() ?>/lib/jquery.js"></script>
     <!-- Bootstrap 3.3.7 -->

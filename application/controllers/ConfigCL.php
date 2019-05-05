@@ -7,6 +7,7 @@ class ConfigCL extends CI_Controller {
                 parent::__construct();
                 $this->load->model('ConfigModel');
                 $this->load->model('UsersModel');
+                $this->load->model('ShareModel');
 	}
 	public function index($data = [])
 	{
