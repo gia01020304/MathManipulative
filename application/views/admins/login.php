@@ -20,7 +20,6 @@
 				<input tabindex="2" type="password" class="form-control" id="Password" name="Password" required>
 			</div>
 		</div>
-		<button tabindex="3" type="submit" class="btn btn-primary" id="btnLogin">Login</button>
+		<button tabindex="3" type="submit" class="btn btn-primary float-right" id="btnLogin">Login</button>
 	</form>
-	<p class="text-center">NOT REGISTERED? <span style="color: red"><a href="#" id="RegisterHere">REGISTER HERE</a></span></p>
 </div>

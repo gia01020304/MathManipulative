@@ -5,23 +5,35 @@
   }
 </style>
 <div class="container-fluid" style="margin-left:80px;margin-right:80px;">
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
+  <br>
+  <div class="box">
+    <div class="box-header">
+      <div class="input-group">
+        <input type="text" class="form-control" id="valueText" placeholder="Search by name..." id="">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" id="searchInput" onclick="filter($('#valueText').val().toLowerCase())">
+            <i class="fa fa-search"></i>
+          </button>
+          <button class="btn btn-default" type="button" id="searchInput" onclick="filter()">
+            Reset
+          </button>
+        </span>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <table class="table table-bordered table-hover" id="myTable">
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Url</th>
-          <th scope="col">Share</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-
+         <th>#</th>
+         <th>Name</th>
+         <th>Url</th>
+         <th>Share Status</th>
+         <th>Action</th>
+       </tr>
        <?php if (isset($shares)): ?>
         <?php $i=1 ?>
         <?php foreach ($shares as $val): ?>
-          <tr>
+          <tr class="item">
             <th scope="row"><?= $i++ ?></th>
             <td><?= $val->name ?></td>
             <td class="div-url"><?= $val->url ?></td>
@@ -34,14 +46,21 @@
               </td>
               <td><button class="btn far fa-clipboard btnClipboard" title="Copy to clipboard" onclick=copyTest('<?= $val->url ?>')></button></td>
             </tr>
-            
+
           <?php endforeach ?>
         <?php endif ?>
-
-      </tbody>
-    </table>
+      </table>
+   <!--  <ul class="pagination">
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+    </ul> -->
   </div>
 </div>
+</div>
+<br>
 <input type="text" name="" id="temp-input" value="" style="opacity: 0">
 <script type="text/javascript">
   function copyTest(text) {
@@ -96,5 +115,10 @@
   }else{
     $(elt).removeClass('fa-times').addClass('fa-check').css('color', 'green').attr('onclick','unActiveFile('+id+',this)');
   }
+}
+function filter(value="") {
+  $("#myTable tr.item").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  });
 }
 </script>

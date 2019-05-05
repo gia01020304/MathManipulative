@@ -7,6 +7,7 @@ class ShareCL extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('ShareModel');
+		$this->load->model('ConfigModel');
 	}
 	public function index()
 	{
@@ -68,10 +69,12 @@ class ShareCL extends CI_Controller {
 		);
 		if ($rs) {
 			$share=$this->ShareModel->CheckExistFile($idUser,$FileName);
+			$urlShare=$this->ConfigModel->GetValues('siteWebpageAdress')->value;
+			$domain=substr($urlShare,-1)=='/'?substr($urlShare, 0, -1):$urlShare;
 			$arr = array(
 				"success"=>true,
 				"msg"=>"Share Success",
-				"data"=>site_url('s/').$share->key
+				"data"=>$domain.'/s/'.$share->key
 			); 
 		}else{
 			$arr = array(
