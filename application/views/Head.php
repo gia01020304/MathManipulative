@@ -16,7 +16,7 @@
 	mxBasePath = '<?= base_url() ?>/lib/javascript/src';
 	var pathRelative='<?= base_url() ?>';
 	var drawFree=false;
-	var editor=null;
+	var editorUI=null;
 </script>
 
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Init.js"></script>

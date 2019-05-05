@@ -1,3 +1,9 @@
+.unset-padding{
+	padding: unset;
+}
+#divmsgparent{
+	padding: unset;
+}
 #GroupColor{
 	padding: 0 87px 0 87px;
 	border-right: 1px solid black;

@@ -12,12 +12,125 @@ class ShareCL extends CI_Controller {
 	{
 		
 	}
+	public function UpdateShare()
+	{
+		header('Content-Type: application/json');
+		if (!isset($this->session->userdata['logged_in'])) {
+			$arr = array(
+				"success"=>false,
+				"msg"=>"You need to login to use the function!"
+			);  
+			echo json_encode( $arr);
+			return;
+		}
+		$this->form_validation->set_rules('FileName', 'File Name', 'required');
+		if($this->form_validation->run() == FALSE){
+			$arr = array(
+				"success"=>false,
+				"msg"=>validation_errors()
+			);  
+			echo json_encode( $arr);
+			return;
+		}
+		$FileName=$this->input->post('FileName');
+		$idUser=$this->session->userdata['id_user'];
+		$rs=$this->ShareModel->ShareFile(
+			$FileName,
+			$idUser,
+		);
+		if ($rs) {
+			$share=$this->ShareModel->CheckExistFile($idUser,$FileName);
+			$arr = array(
+				"success"=>true,
+				"msg"=>"Share Success",
+				"data"=>site_url('s/').$share->key
+			); 
+		}else{
+			$arr = array(
+				"success"=>false,
+				"msg"=>"Share Error"
+			); 
+		}
+		echo json_encode($arr);
+	}
+	public function SaveShare()
+	{
+		header('Content-Type: application/json');
+		if (!isset($this->session->userdata['logged_in'])) {
+			$arr = array(
+				"success"=>false,
+				"msg"=>"You need to login to use the function!"
+			);  
+			echo json_encode( $arr);
+			return;
+		}
+		$this->form_validation->set_rules('FileName', 'File Name', 'required');
+		if($this->form_validation->run() == FALSE){
+			$arr = array(
+				"success"=>false,
+				"msg"=>validation_errors()
+			);  
+			echo json_encode( $arr);
+			return;
+		}
+
+
+		$key=random_string('alnum', 8);
+		$isNewFile=$this->input->post('IsNewFile');
+
+
+		if ($isNewFile==="true") {
+			$checkExistFile=$this->ShareModel->CheckExistFile(
+				$this->session->userdata['id_user'],
+				$this->input->post('FileName')
+			);
+			if ($checkExistFile!=null) {
+				$arr = array(
+					"success"=>false,
+					"msg"=>"File Name already exist"
+				);  
+				echo json_encode( $arr);
+				return;
+			}
+			$rs=$this->ShareModel->SaveShare(
+				$key,
+				$this->input->post('value'),
+				$this->input->post('FileName'),
+				$this->session->userdata['id_user']
+			);
+		}else{
+			$rs=$this->ShareModel->UpdateSaveFile(
+				$this->input->post('FileName'),
+				$this->session->userdata['id_user'],
+				$this->input->post('value')
+			);
+		}
+		
+		if ($rs) {
+			$arr = array(
+				"success"=>true,
+				"msg"=>"Save File Success",
+				"data"=>$this->input->post('FileName')
+			); 
+		}else{
+			$arr = array(
+				"success"=>false,
+				"msg"=>"Save Error"
+			); 
+		}
+		echo json_encode($arr);
+
+	}
 	public function Share($Key)
 	{
 		$rs=$this->ShareModel->GetShared($Key);
+		if (!array_key_exists('id_user', $this->session->userdata)) {
+			$rs->name='Untitled';
+		}
 		$data["shared"]=$rs;
 		$data["subview"]="Base/index";
 		$this->load->view('Main', $data);
+		
 	}
 	public function GetAllOfUser()
 	{

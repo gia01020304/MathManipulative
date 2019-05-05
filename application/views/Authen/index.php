@@ -76,6 +76,9 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#divFileName').text('Untitled');
+		});
 		$('#popupLogin').on('show.bs.modal', function (e) {
 			$('#frmRegister').addClass('unactive');
 			$('#frmLogin').removeClass('unactive');
@@ -170,6 +173,7 @@
 						$('#authenticate').remove();
 						$('#processuser').append(resp.data);
 						$('.modal-backdrop.fade.show').remove();
+						processFeature();
 					}else{
 						addMsgError(resp.msg);
 					}

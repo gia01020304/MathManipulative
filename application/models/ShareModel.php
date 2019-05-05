@@ -8,9 +8,45 @@ class ShareModel extends MY_Model {
 		parent::__construct();
 		$this->table='shares';
 	}
-	public function GetShared($key)
+
+	public function UpdateSaveFile($FileName,$IdUser,$Value)
 	{
-		$this->db->where('key', $key);
+		$this->db->set('value', $Value);
+		$this->db->where('name', $FileName);
+		$this->db->where('iduser', $IdUser);
+		$this->db->update($this->table);
+		return ($this->db->affected_rows() == -1) ? false : true;
+
+	}
+	public function ShareFile($FileName,$IdUser)
+	{
+		$this->db->set('isshare', 1);
+		$this->db->where('name', $FileName);
+		$this->db->where('iduser', $IdUser);
+		$this->db->update($this->table);
+		return ($this->db->affected_rows() == -1) ? false : true;
+	}
+	public function CheckExistFile($IdUser,$FileName)
+	{
+		$this->db->where('iduser', $IdUser);
+		$this->db->where('name', $FileName);
+		$query=$this->db->get($this->table);
+		$rs=$query->row();
+		return $rs;
+	}
+	public function  SaveShare($Key,$Value,$FileName,$IdUser)
+	{
+		$data=array(
+			"key"=>$Key,
+			"value"=>$Value,
+			"iduser"=>$IdUser,
+			'name'=>$FileName
+		);
+		return $this->Add($data);
+	}
+	public function GetShared($Key)
+	{
+		$this->db->where('key', $Key);
 		$query=$this->db->get($this->table);
 		$rs=$query->row();
 		return $rs;

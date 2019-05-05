@@ -55,10 +55,7 @@ class AuthenticateCL extends CI_Controller {
 	}
 	public function Logout()
 	{
-		$sess_array = array(
-			'username' => ''
-		);
-		$this->session->unset_userdata('logged_in', $sess_array);
+		$this->session->sess_destroy();
 		$arr = array(
 			"success"=>true,
 			"msg"=>"",

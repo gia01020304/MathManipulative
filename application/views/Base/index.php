@@ -42,7 +42,7 @@
 				themes[Graph.prototype.defaultThemeName] = xhr[1].getDocumentElement(); 
 				
 				// Main
-				editor = new EditorUi(new Editor(urlParams['chrome'] == '0', themes));
+				editorUI = new EditorUi(new Editor(urlParams['chrome'] == '0', themes));
 			}, function()
 			{
 				document.body.innerHTML = '<center style="margin-top:10%;">Error loading resource files. Please check browser console.</center>';
@@ -50,7 +50,7 @@
 		})();
 		$(document).ready(function() {
 			<?php if (isset($shared)): ?>
-				restore(`<?= $shared->value ?>`)
+				restore(`<?= $shared->value ?>`,`<?= $shared->name ?>`)
 			<?php endif ?>
 		});
 	</script>
