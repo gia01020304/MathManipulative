@@ -102,7 +102,7 @@
                     </li>
                     <?php } ?>
                     <li>
-                        <a href="#">
+                    <a href="<?= base_url()?>AccountCL">
                             <i class="fas fa-user-circle"></i>
                             <span>Account</span>
                         </a>
