@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/AdminLTE.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/lib/1.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
         <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -24,7 +25,22 @@
 
     <!-- Google Font -->
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
-
+    <script type="text/javascript">
+	    var pathRelative='<?= base_url() ?>';
+    </script>
+    <?php 
+        $isAdmin = false;
+        if(array_key_exists('id_user',$this->session->userdata)) {
+            $id = $this->session->userdata['id_user'];
+            $userModel = new UsersModel();
+            $user = $userModel->GetUserById($id);
+            if(!empty($user) && $user->role == 0) { // Normal
+                    $isAdmin = false;
+            } else if(!empty($user) && $user->role == 1) { // Admin
+                    $isAdmin = true;
+            }
+        }
+    ?>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -45,14 +61,25 @@
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                     <i class="fa fa-bars"></i>
                 </a>
-
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <li>
+                    <?php
+		            if (!isset($this->session->userdata['logged_in'])) { ?>
+	                    <li id="login">
                             <a href="#">
-                                <i class="fa fa-gears"></i>
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>Login</span>
                             </a>
                         </li>
+                    <?php	
+                    } else {?>
+                            <li id="logout">
+                                <a href="#">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                            </a>
+                        </li>
+                    <?php }?>
                     </ul>
                 </div>
             </nav>
@@ -65,10 +92,24 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">Menu</li>
+                    <?php if($isAdmin === true) { ?>
                     <li>
-                        <a href="#">
+                        <a href="<?= base_url()?>ConfigCL">
                             <i class="fa fa-cogs"></i>
                             <span>Config page</span>
+                        </a>
+                    </li>
+                    <?php } ?>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Account</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-file-image"></i>
+                            <span>Your files</span>
                         </a>
                     </li>
                 </ul>
@@ -121,6 +162,7 @@
     <!-- AdminLTE App -->
     <script src="<?= base_url() ?>/lib/admins/adminlte.min.js"></script>
     <script src="<?= base_url() ?>/lib/admins/admin.js"></script>
+    <script src="<?= base_url() ?>/lib/1.js"></script>
 
 </body>
 

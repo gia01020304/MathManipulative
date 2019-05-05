@@ -33,6 +33,13 @@ class UsersModel extends MY_Model {
 		$rs=$query->row();
 		return $rs;
 	}
+	public function GetUserById($id) {
+		$this->db->where('id', $id);
+		$query=$this->db->get($this->table);
+		$rs=$query->row();
+		return $rs;
+	}
+
 }
 
 /* End of file UsersModel.php */

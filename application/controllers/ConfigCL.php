@@ -5,25 +5,30 @@ class ConfigCL extends CI_Controller {
 	public function __construct()
 	{
                 parent::__construct();
-		$this->load->model('ConfigModel');
+                $this->load->model('ConfigModel');
+                $this->load->model('UsersModel');
 	}
 	public function index($data = [])
 	{
-        // // login
-        // //
-        // $isLoggedIn = false;
-        // if($isLoggedIn) {
-
-        // } else {
-        //     $this->load->view('admin');
-        // }
-        $pageName = "Config page";
-        $subView = "admins/config";
-        $data['pageName'] = $pageName;
-        $data['subView'] = $subView;
-        $data['webpage'] = $this->getwebpageAddress();
-        $data['helpLink'] = $this->gethelpLinkAddress();
-        $this->load->view('admin',$data);
+                if (!isset($this->session->userdata['logged_in'])) {
+                        header("Location: AuthenticateCL/adminIndex");
+		} else {
+                        // get user by id
+                        // check role   
+                        $id = $this->session->userdata['id_user'];
+                        $user = $this->UsersModel->GetUserById($id);
+                        if(!empty($user) && $user->role == 0) { // Normal
+                                header("Location: AccountCL");
+                        } else if(!empty($user) && $user->role == 1) { // Admin
+                                $pageName = "Config page";
+                                $subView = "admins/config";
+                                $data['pageName'] = $pageName;
+                                $data['subView'] = $subView;
+                                $data['webpage'] = $this->getwebpageAddress();
+                                $data['helpLink'] = $this->gethelpLinkAddress();
+                                $this->load->view('admin',$data);
+                        }
+                }
         }
         public function save(){
                 // save file

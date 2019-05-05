@@ -1,11 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ConfigCL extends CI_Controller {
+class AccountCL extends CI_Controller {
 	public function __construct()
 	{
                 parent::__construct();
-		$this->load->model('ConfigModel');
+                $this->load->model('ConfigModel');
+                $this->load->model('UsersModel');
 	}
 	public function index($data = [])
 	{
