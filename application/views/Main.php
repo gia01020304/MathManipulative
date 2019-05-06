@@ -45,8 +45,8 @@
 							</div>
 						</div>
 						<button type='button' class="btn btn-primary float-right" id="btnSaveFile">Save</button>
-
 					</form>
+
 				</div>
 			</div>
 		</div>s
@@ -72,7 +72,11 @@
 <input type="hidden" name="" value="0" id="divType">
 </body>
 <script type="text/javascript">
+	$('#frmFileName').submit(function(event) {
+		event.preventDefault();
+	});
 	$('#btnSaveFile').click(function(event) {
+		
 		clearMsg('FileName');
 		if ($('#FileName').val()==="") {
 			addMsgError('File Name is required','FileName');
