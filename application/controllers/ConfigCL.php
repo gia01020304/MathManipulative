@@ -35,9 +35,12 @@ class ConfigCL extends CI_Controller {
         }
         public function getViewMyFile()
         {
+<<<<<<< HEAD
+=======
                 if (!isset($this->session->userdata['logged_in'])) {
                       redirect('AuthenticateCL/adminIndex','refresh');
                 }
+>>>>>>> master
                 $idUser=$this->session->userdata['id_user'];
                 $rs=$this->ShareModel->GetAllOfUser($idUser);
                 $temp=$this->getwebpageAddress();
@@ -48,7 +51,19 @@ class ConfigCL extends CI_Controller {
                 $data['pageName'] = 'My File';
                 $data['subView'] = 'admins/myfile';
                 $data['shares']=$rs;
+<<<<<<< HEAD
+                $view=$this->load->view('admins/myfile', $data, true);
+                $arr = array(
+                        "success"=>'',
+                        "msg"=>'',
+                        "data"=>$view,
+                        "pageName"=>'My File'
+                );  
+                echo json_encode($arr);
+                return;
+=======
                 $this->load->view('admin', $data);
+>>>>>>> master
         }
         public function save(){
                 // save file
