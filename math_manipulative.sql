@@ -183,7 +183,8 @@ insert  into `ci_sessions`(`id`,`ip_address`,`timestamp`,`data`) values
 ('og228hj0g5gp3cuk64uece7aa74hh0c4','::1',1557032381,'__ci_last_regenerate|i:1557032381;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
 ('qme5b28d4o7l46note69atdq7n69e921','::1',1557032764,'__ci_last_regenerate|i:1557032764;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
 ('8jim10r2ec6l592bfio9r700178g13jo','::1',1557033183,'__ci_last_regenerate|i:1557033183;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
-('epnnp6duvcbsbkjknc9jfgqi36edo459','::1',1557033790,'__ci_last_regenerate|i:1557033183;logged_in|s:5:\"user1\";id_user|s:1:\"1\";');
+('epnnp6duvcbsbkjknc9jfgqi36edo459','::1',1557033790,'__ci_last_regenerate|i:1557033183;logged_in|s:5:\"user1\";id_user|s:1:\"1\";'),
+('aleheobvptl9i07g658qvq8o9gh75v76','::1',1557062445,'__ci_last_regenerate|i:1557062367;logged_in|s:5:\"user1\";id_user|s:1:\"1\";');
 
 /*Table structure for table `config` */
 
@@ -253,15 +254,16 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`,`username`)
+  `role` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`,`username`,`role`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`username`,`password`,`email`) values 
-(1,'user1','123',NULL),
-(2,'user2','123','gia01020304@gmail.com'),
-(3,'student1@gmail.com','123','gia01020304@gmail.comd');
+insert  into `users`(`id`,`username`,`password`,`email`,`role`) values 
+(1,'user1','123',NULL,1),
+(2,'user2','123','gia01020304@gmail.com',0),
+(3,'student1@gmail.com','123','gia01020304@gmail.comd',0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

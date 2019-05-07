@@ -8,12 +8,12 @@ class ConfigCL extends CI_Controller {
                 $this->load->model('ConfigModel');
                 $this->load->model('UsersModel');
                 $this->load->model('ShareModel');
-	}
-	public function index($data = [])
-	{
+        }
+        public function index($data = [])
+        {
                 if (!isset($this->session->userdata['logged_in'])) {
                         header("Location: AuthenticateCL/adminIndex");
-		} else {
+                } else {
                         // get user by id
                         // check role   
                         $id = $this->session->userdata['id_user'];
@@ -35,15 +35,23 @@ class ConfigCL extends CI_Controller {
         }
         public function getViewMyFile()
         {
+<<<<<<< HEAD
+=======
+                if (!isset($this->session->userdata['logged_in'])) {
+                      redirect('AuthenticateCL/adminIndex','refresh');
+                }
+>>>>>>> master
                 $idUser=$this->session->userdata['id_user'];
-                header('Content-Type: application/json');
                 $rs=$this->ShareModel->GetAllOfUser($idUser);
                 $temp=$this->getwebpageAddress();
                 $domain=substr($temp,-1)=='/'?substr($temp, 0, -1):$temp;
                 foreach ($rs as $value) {
                         $value->url=$domain.'/s/'.$value->key;
                 }
+                $data['pageName'] = 'My File';
+                $data['subView'] = 'admins/myfile';
                 $data['shares']=$rs;
+<<<<<<< HEAD
                 $view=$this->load->view('admins/myfile', $data, true);
                 $arr = array(
                         "success"=>'',
@@ -53,6 +61,9 @@ class ConfigCL extends CI_Controller {
                 );  
                 echo json_encode($arr);
                 return;
+=======
+                $this->load->view('admin', $data);
+>>>>>>> master
         }
         public function save(){
                 // save file

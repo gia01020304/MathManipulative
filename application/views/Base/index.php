@@ -43,19 +43,17 @@
 				
 				// Main
 				editorUI = new EditorUi(new Editor(urlParams['chrome'] == '0', themes));
-			}, function()
-			{
-				document.body.innerHTML = '<center style="margin-top:10%;">Error loading resource files. Please check browser console.</center>';
-			});
+				<?php if (isset($shared)): ?>
+					<?php if ($shared->isshare==1): ?>
+						restore(`<?= $shared->value ?>`,`<?= $shared->name ?>`);
+						<?php else: ?>
+							alert('The file has not been shared');
+						<?php endif ?>
+					<?php endif ?>
+				}, function()
+				{
+					document.body.innerHTML = '<center style="margin-top:10%;">Error loading resource files. Please check browser console.</center>';
+				});
 		})();
-		$(document).ready(function() {
-			<?php if (isset($shared)): ?>
-				<?php if ($shared->isshare==1): ?>
-					restore(`<?= $shared->value ?>`,`<?= $shared->name ?>`);
-					<?php else: ?>
-					alert('The file has not been shared');
-				<?php endif ?>
-			<?php endif ?>
-		});
 	</script>
 	
