@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ConfigCL extends CI_Controller {
-	public function __construct()
-	{
+    public function __construct()
+    {
                 parent::__construct();
                 $this->load->model('ConfigModel');
                 $this->load->model('UsersModel');
@@ -35,12 +35,9 @@ class ConfigCL extends CI_Controller {
         }
         public function getViewMyFile()
         {
-<<<<<<< HEAD
-=======
                 if (!isset($this->session->userdata['logged_in'])) {
                       redirect('AuthenticateCL/adminIndex','refresh');
                 }
->>>>>>> master
                 $idUser=$this->session->userdata['id_user'];
                 $rs=$this->ShareModel->GetAllOfUser($idUser);
                 $temp=$this->getwebpageAddress();
@@ -51,19 +48,7 @@ class ConfigCL extends CI_Controller {
                 $data['pageName'] = 'My File';
                 $data['subView'] = 'admins/myfile';
                 $data['shares']=$rs;
-<<<<<<< HEAD
-                $view=$this->load->view('admins/myfile', $data, true);
-                $arr = array(
-                        "success"=>'',
-                        "msg"=>'',
-                        "data"=>$view,
-                        "pageName"=>'My File'
-                );  
-                echo json_encode($arr);
-                return;
-=======
                 $this->load->view('admin', $data);
->>>>>>> master
         }
         public function save(){
                 // save file
@@ -104,11 +89,17 @@ class ConfigCL extends CI_Controller {
         }
         private function getwebpageAddress() {
                 $webpage = $this->ConfigModel->GetValues('siteWebpageAdress');
-                return $webpage->value;
+                if(!empty($webpage)) {
+                        return $webpage->value;
+                }
+                return "";
         }
         private function gethelpLinkAddress() {
                 $helpLink = $this->ConfigModel->GetValues('siteHelpLinkAddress');
-                return $helpLink->value;
+                if(!empty($helpLink)) {
+                        return $helpLink->value;
+                }
+                return "";
         }
 
 }
