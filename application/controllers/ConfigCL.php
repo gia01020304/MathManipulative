@@ -89,11 +89,17 @@ class ConfigCL extends CI_Controller {
         }
         private function getwebpageAddress() {
                 $webpage = $this->ConfigModel->GetValues('siteWebpageAdress');
-                return $webpage->value;
+                if(!empty($webpage)) {
+                        return $webpage->value;
+                }
+                return "";
         }
         private function gethelpLinkAddress() {
                 $helpLink = $this->ConfigModel->GetValues('siteHelpLinkAddress');
-                return $helpLink->value;
+                if(!empty($helpLink)) {
+                        return $helpLink->value;
+                }
+                return "";
         }
 
 }
