@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Math Manipulative</title>
+    <title>Math Manipulation</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -109,7 +109,7 @@
                         <li class="li-item" >
                             <a href="<?= site_url('ConfigCL/getViewMyFile') ?>" id="btnMyFile">
                                 <i class="fa fa-file"></i>
-                                <span>My File</span>
+                                <span>My manipulations</span>
                             </a>
                         </li>
                     </ul>
