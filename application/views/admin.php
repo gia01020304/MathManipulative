@@ -102,14 +102,14 @@
                         <?php } ?>
                         <li>
                             <a href="<?= base_url()?>AccountCL">
-                                <i class="fas fa-user-circle"></i>
+                                <i class="fa fa-user-circle"></i>
                                 <span>Account</span>
                             </a>
                         </li>
                         <li class="li-item" >
                             <a href="<?= site_url('ConfigCL/getViewMyFile') ?>" id="btnMyFile">
                                 <i class="fa fa-file"></i>
-                                <span>My File</span>
+                                <span>My manipulations</span>
                             </a>
                         </li>
                     </ul>

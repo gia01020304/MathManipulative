@@ -44,7 +44,7 @@
                   <button class="btn btn-outline-secondary fas fa-times btnShare" style="color: red" onclick=activeFile(<?= $val->id ?>,this)></button>
                 <?php endif ?>
               </td>
-              <td><button class="btn far fa-clipboard btnClipboard" title="Copy to clipboard" onclick=copyTest('<?= $val->url ?>')></button></td>
+              <td><button class="btn far fa-copy btnClipboard" title="Copy to clipboard" onclick=copyTest('<?= $val->url ?>')></button></td>
             </tr>
 
           <?php endforeach ?>

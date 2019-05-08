@@ -45,7 +45,7 @@ class ConfigCL extends CI_Controller {
                 foreach ($rs as $value) {
                         $value->url=$domain.'/s/'.$value->key;
                 }
-                $data['pageName'] = 'My File';
+                $data['pageName'] = 'My manipulations';
                 $data['subView'] = 'admins/myfile';
                 $data['shares']=$rs;
                 $this->load->view('admin', $data);

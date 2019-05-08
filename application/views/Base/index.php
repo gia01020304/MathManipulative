@@ -18,7 +18,7 @@
 						var enabled = req.getStatus() != 404;
 						this.actions.get('open').setEnabled(enabled || Graph.fileSupport);
 						this.actions.get('import').setEnabled(enabled || Graph.fileSupport);
-						this.actions.get('save').setEnabled(enabled|| Graph.fileSupport);
+						// this.actions.get('save').setEnabled(false);
 						this.actions.get('saveAs').setEnabled(enabled);
 						this.actions.get('export').setEnabled(enabled);
 					}));

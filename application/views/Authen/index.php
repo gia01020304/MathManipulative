@@ -1,13 +1,72 @@
+<style type="text/css">
+	.modal-login .modal-content {
+		border-radius: 1px;
+		border: none;
+	}
+	.modal-login .modal-header {
+		position: relative;
+		justify-content: center;
+		background: #f2f2f2;
+	}
+	.modal-login .modal-body {
+		padding: 30px;
+	}
+	.modal-login .modal-footer {
+		background: #f2f2f2;
+	}
+	.modal-login h4 {
+		text-align: center;
+		font-size: 26px;
+	}
+	.modal-login label {
+		font-weight: normal;
+		font-size: 13px;
+	}
+	.modal-login .form-control, .modal-login .btn {
+		min-height: 38px;
+		border-radius: 2px; 
+	}
+	.modal-login .hint-text {
+		text-align: center;
+	}
+	.modal-login .close {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+	.modal-login .checkbox-inline {
+		margin-top: 12px;
+	}
+	.modal-login input[type="checkbox"]{
+		margin-top: 2px;
+	}
+	.modal-login .btn {
+		min-width: 100px;
+		background: #3498db;
+		border: none;
+		line-height: normal;
+	}
+	.modal-login .btn:hover, .modal-login .btn:focus {
+		background: #248bd0;
+	}
+	.modal-login .hint-text a {
+		color: #999;
+	}
+	.trigger-btn {
+		display: inline-block;
+		margin: 100px auto;
+	}
+</style>
 <div id="authenticate" style="">
 	<div id="authen"class="manageruser">
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popupLogin" style="font-size: 12px;">Login</button>
 	</div>
 
 	<div class="modal fade" id="popupLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog modal-login" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Math Manipulative</h5>
+					<h4 class="modal-title" id="title-login">Login</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -33,15 +92,15 @@
 									<input tabindex="2" type="password" class="form-control" id="Password" name="Password" required autocomplete="new-password">
 								</div>
 							</div>
+							<p class="text-center">NOT REGISTERED? <span style="color: red"><a href="#" id="RegisterHere">REGISTER HERE</a></span></p>
+							<div id="footer" class="float-right">
+								<button tabindex="3" type="submit" class="btn btn-primary" id="btnLogin">Sign In</button> 
+							</div>
 						</form>
-						<p class="text-center">NOT REGISTERED? <span style="color: red"><a href="#" id="RegisterHere">REGISTER HERE</a></span></p>
-						<div id="footer" class="float-right">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button tabindex="3" type="button" class="btn btn-primary" id="btnLogin">Login</button> 
-						</div>
+						
 					</div>
 					<div id="frmRegister" class="unactive">
-						<form autocomplete="off" id="dsad">
+						<form autocomplete="off" id="frmregister">
 							<input style="display:none" type="text" name="fakeusernameremembered"/>
 							<input style="display:none" type="password" name="fakepasswordremembered"/>
 							<div class="form-group row">
@@ -68,12 +127,12 @@
 									<input tabindex="7" type="password" class="form-control" id="PasswordConfirmRegister" name="PasswordRegister">
 								</div>
 							</div>
+							<p class="text-center">REGISTERED? <span style="color: red"><a href="#" id="LoginHere">Login</a></span></p>
+							<div id="footer" class="float-right">
+								<button tabindex="8" type="submit" class="btn btn-primary" id="btnRegister">Sign Up</button> 
+							</div>
 						</form>
-						<p class="text-center">REGISTERED? <span style="color: red"><a href="#" id="LoginHere">Login</a></span></p>
-						<div id="footer" class="float-right">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<button tabindex="8" type="button" class="btn btn-primary" id="btnRegister">Register</button> 
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -82,6 +141,12 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#divFileName').text('Untitled');
+			$('#frmlogin').submit(function(event) {
+				event.preventDefault();
+			});
+			$('#frmregister').submit(function(event) {
+				event.preventDefault();
+			});
 		});
 		$('#popupLogin').on('show.bs.modal', function (e) {
 			$('#frmRegister').addClass('unactive');
@@ -95,7 +160,13 @@
 			if ($('#EmailRegister').val()==="") {
 				msg+="Email is required. <br />";
 				isValid=false;
+			}else{
+				if (!isValidEmailAddress($('#EmailRegister').val())) {
+					msg+="Email is not valid. <br />";
+					isValid=false;
+				}
 			}
+
 			if ($('#UserNameRegister').val()==="") {
 				msg+="UserName is required. <br />";
 				isValid=false;
@@ -133,6 +204,8 @@
 					if (resp.success) {
 						$('#frmRegister').addClass('unactive');
 						$('#frmLogin').removeClass('unactive');
+						$('#UserName').val($('#UserNameRegister').val());
+						$('#Password').focus();
 						addMsgSuceess(resp.msg);
 					}else {
 						addMsgError(resp.msg);
@@ -191,12 +264,14 @@
 		});
 		$('#RegisterHere').click(function(event) {
 			clearMsg();
+			$('#title-login').html('Register');
 			$('#frmLogin').addClass('unactive');
 			$('#frmRegister').removeClass('unactive');
 			return false;
 		});
 		$('#LoginHere').click(function(event) {
 			clearMsg();
+			$('#title-login').html('Login');
 			$('#frmRegister').addClass('unactive');
 			$('#frmLogin').removeClass('unactive');
 			return false;

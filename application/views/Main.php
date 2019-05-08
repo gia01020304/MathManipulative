@@ -8,7 +8,7 @@
 </head>
 <body class="geEditor">
 	<div class="loading">Loading&#8230;</div>
-	<div id="processuser">
+	<div id="processuser" class="m-2">
 		<?php
 		if (!isset($this->session->userdata['logged_in'])) {
 			$this->load->view('Authen/index');
@@ -44,7 +44,7 @@
 								<input tabindex="1" type="text" class="form-control" id="FileName" name="FileName" required >
 							</div>
 						</div>
-						<button type='button' class="btn btn-primary float-right" id="btnSaveFile">Save</button>
+						<button type='submit' class="btn btn-primary float-right" id="btnSaveFile">Save</button>
 					</form>
 
 				</div>
@@ -61,7 +61,7 @@
 					<div class="input-group unset-padding">
 						<input type="text" class="form-control unset-padding" id="inputUrlShare">
 						<div class="input-group-append unset-padding">
-							<button class="far fa-clipboard" type="button" title="Click to copy to clipboard" onclick="copyToClipboard(document.getElementById('inputUrlShare'))"></button>
+							<button class="far fa-copy" type="button" title="Click to copy to clipboard" onclick="copyToClipboard(document.getElementById('inputUrlShare'))"></button>
 						</div>
 					</div>
 				</td>
@@ -76,7 +76,6 @@
 		event.preventDefault();
 	});
 	$('#btnSaveFile').click(function(event) {
-		
 		clearMsg('FileName');
 		if ($('#FileName').val()==="") {
 			addMsgError('File Name is required','FileName');
