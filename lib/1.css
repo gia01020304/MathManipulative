@@ -49,7 +49,6 @@
 	z-index: 100;
 	position: absolute;
 	right: 17px;
-	margin-top: 10px;
 }
 .unactive{
 	display: none;
@@ -175,7 +174,7 @@
 		transform: rotate(360deg);
 	}
 }
-.geToolbarContainer .geToolbar {
+.geToolbarContainer .geToolbar .geButton {
 	cursor: pointer;
 	font-size: 24px;
 }
