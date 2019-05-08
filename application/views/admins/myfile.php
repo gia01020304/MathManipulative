@@ -8,17 +8,19 @@
   <br>
   <div class="box">
     <div class="box-header">
-      <div class="input-group">
-        <input type="text" class="form-control" id="valueText" placeholder="Search by name..." id="">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button" id="searchInput" onclick="filter($('#valueText').val().toLowerCase())">
-            <i class="fa fa-search"></i>
-          </button>
-          <button class="btn btn-default" type="button" id="searchInput" onclick="filter()">
-            Reset
-          </button>
-        </span>
-      </div>
+      <form id="frmFilter">
+        <div class="input-group">
+          <input type="text" class="form-control" id="valueText" placeholder="Search by name..." id="">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit" id="searchInput" onclick="filter($('#valueText').val().toLowerCase())">
+              <i class="fa fa-search"></i>
+            </button>
+            <button class="btn btn-default" type="button" id="searchInput" onclick="filter()">
+              Reset
+            </button>
+          </span>
+        </div>
+      </form>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
@@ -63,6 +65,10 @@
 <br>
 <input type="text" name="" id="temp-input" value="" style="opacity: 0">
 <script type="text/javascript">
+  document.querySelector("#frmFilter").addEventListener("submit", function(e){
+    e.preventDefault();
+  });
+
   function copyTest(text) {
     $('#temp-input').val(text)
     var copyText = document.getElementById("temp-input");
