@@ -1,6 +1,6 @@
 /*
 SQLyog Community v13.0.1 (64 bit)
-MySQL - 5.7.21 : Database - mathmanipulative
+MySQL - 5.7.21 : Database - yvcgvgtfsb
 *********************************************************************
 */
 
@@ -12,9 +12,9 @@ MySQL - 5.7.21 : Database - mathmanipulative
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`mathmanipulative` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`yvcgvgtfsb` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `mathmanipulative`;
+USE `yvcgvgtfsb`;
 
 /*Table structure for table `ci_sessions` */
 
