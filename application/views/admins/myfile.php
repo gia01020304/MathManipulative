@@ -38,7 +38,7 @@
           <tr class="item">
             <th scope="row"><?= $i++ ?></th>
             <td><?= $val->name ?></td>
-            <td class="div-url"><?= $val->url ?></td>
+            <td class="div-url"><a target="_blank" href="<?= $val->url ?>"><?= $val->url ?></a></td>
             <td>
               <?php if ($val->isshare): ?>
                 <button class="btn btn-outline-secondary fas fa-check btnShare" style="color: green" onclick=unActiveFile(<?= $val->id ?>,this)></button>
