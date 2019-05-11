@@ -202,6 +202,7 @@
 				},
 				success:function (resp) {
 					if (resp.success) {
+						$('#title-login').html('Login');
 						$('#frmRegister').addClass('unactive');
 						$('#frmLogin').removeClass('unactive');
 						$('#UserName').val($('#UserNameRegister').val());
