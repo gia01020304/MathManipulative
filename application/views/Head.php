@@ -17,6 +17,7 @@
 	var pathRelative='<?= base_url() ?>';
 	var drawFree=false;
 	var editorUI=null;
+	var line=null;
 </script>
 
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Init.js"></script>
@@ -36,6 +37,7 @@
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Toolbar.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Dialogs.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/svg/svg.min.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>/lib/svg/d3.min.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/svg/dist/svg.draw.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/1.js"></script>
 <!-- <script type="text/javascript" src="./lib/svg/dist/svg.draw.min.js"></script> -->
