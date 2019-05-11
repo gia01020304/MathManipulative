@@ -14,26 +14,27 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/ionicons.min.css">
     <!-- Theme style -->
+    <script src="<?= base_url() ?>/lib/jquery.js"></script>
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/AdminLTE.css">
     <link rel="stylesheet" href="<?= base_url() ?>/lib/1.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
+     folder instead of downloading all of them to reduce the load. -->
         <!-- AdminLTE Skins. Choose a skin from the css/skins
-           folder instead of downloading all of them to reduce the load. -->
-           <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/_all-skins.min.css">
-           <link rel="icon"  href="<?= base_url() ?>/lib/images/favicon.png">
+         folder instead of downloading all of them to reduce the load. -->
+         <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/_all-skins.min.css">
+         <link rel="icon"  href="<?= base_url() ?>/lib/images/favicon.png">
 
-           <!-- Google Font -->
-           <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
-           <script type="text/javascript">
-             var pathRelative='<?= base_url() ?>';
-         </script>
-         <?php 
-         $isAdmin = false;
-         if(array_key_exists('id_user',$this->session->userdata)) {
-            $id = $this->session->userdata['id_user'];
-            $userModel = new UsersModel();
-            $user = $userModel->GetUserById($id);
+         <!-- Google Font -->
+         <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> -->
+         <script type="text/javascript">
+           var pathRelative='<?= base_url() ?>';
+       </script>
+       <?php 
+       $isAdmin = false;
+       if(array_key_exists('id_user',$this->session->userdata)) {
+        $id = $this->session->userdata['id_user'];
+        $userModel = new UsersModel();
+        $user = $userModel->GetUserById($id);
             if(!empty($user) && $user->role == 0) { // Normal
                 $isAdmin = false;
             } else if(!empty($user) && $user->role == 1) { // Admin
@@ -44,8 +45,8 @@
     </head>
 
     <body class="hold-transition skin-blue sidebar-mini">
-     <div class="loading">Loading&#8230;</div>
-     <div class="wrapper" id="main-section">
+       <div class="loading">Loading&#8230;</div>
+       <div class="wrapper" id="main-section">
 
         <header class="main-header">
             <!-- Logo -->
@@ -66,7 +67,7 @@
                         <ul class="nav navbar-nav">
                             <?php
                             if (!isset($this->session->userdata['logged_in'])) { ?>
-                             <li id="login">
+                               <li id="login">
                                 <a href="#">
                                     <i class="fas fa-sign-in-alt"></i>
                                     <span>Login</span>
@@ -121,7 +122,7 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" id="wrapper">
             <!-- Main content -->
             <section class="content">
                 <!-- Small boxes (Stat box) -->
@@ -158,13 +159,13 @@
 
     </div>
     <!-- ./wrapper -->
-    <script src="<?= base_url() ?>/lib/jquery.js"></script>
+
     <!-- Bootstrap 3.3.7 -->
     <script src="<?= base_url() ?>/lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url() ?>/lib/admins/adminlte.min.js"></script>
     <script src="<?= base_url() ?>/lib/admins/admin.js"></script>
     <script src="<?= base_url() ?>/lib/1.js"></script>
-</body>
 
+</body>
 </html>
