@@ -1,0 +1,105 @@
+<shapes name="mxgraph.protractor">
+	<shape name="Protractor" id="protractor"  h="50" w="100" aspect="variable" strokewidth="2">
+		<connections>
+			<constraint x="0.5" y="0" perimeter="0" name="N" />
+			<constraint x="0.5" y="1" perimeter="0" name="S" />
+		</connections>
+		<background>
+			<strokewidth width="1"/>
+			<path>
+				<move x="0" y="50" />
+				<arc rx="50" ry="50" x-axis-rotation="0" large-arc-flag="0" sweep-flag="1" x="100" y="50" />
+				<close/>
+				
+			</path>
+			<stroke/>
+			<strokewidth width="0"/>
+			<path>
+				<!-- 10 -->
+				<move x="99" y="41"/>
+				<line x="94" y="42"/>
+
+				<!-- 20 -->
+				<move x="97" y="33"/>
+				<line x="92" y="35"/>
+
+				<!-- 30 -->
+				<move x="93" y="25"/>
+				<line x="89" y="28"/>
+
+				<!-- 40 -->
+				<move x="88" y="18"/>
+				<line x="84" y="21"/>
+
+				<!-- 50 -->
+				<move x="82" y="12"/>
+				<line x="79" y="16"/>
+
+				<!-- 60 -->
+				<move x="75" y="7"/>
+				<line x="73" y="11"/>
+
+				<!-- 70 -->
+				<move x="67" y="3"/>
+				<line x="65" y="8"/>
+
+				<!-- 80 -->
+				<move x="59" y="1"/>
+				<line x="58" y="6"/>
+
+				<!-- 90 -->
+				<move x="50" y="0"/>
+				<line x="50" y="5"/>
+
+				<!-- 100 -->
+				<move x="41" y="1"/>
+				<line x="42" y="6"/>
+
+				<!-- 110 -->
+				<move x="33" y="3"/>
+				<line x="35" y="8"/>
+
+				<!-- 120-->
+				<move x="25" y="7"/>
+				<line x="28" y="11"/>
+
+				<!-- 130 -->
+				<move x="18" y="12"/>
+				<line x="21" y="16"/>
+				<!-- 140 -->
+				<move x="12" y="18"/>
+				<line x="16" y="21"/>
+				<!-- 150 -->
+				<move x="7" y="25"/>
+				<line x="11" y="28"/>
+				<!-- 160 -->
+				<move x="3" y="33"/>
+				<line x="8" y="35"/>
+				<!-- 170 -->
+				<move x="1" y="41"/>
+				<line x="6" y="42"/>
+			</path>
+			<fontsize size="3"/>
+			<text str="10" align="center" valign="middle" x="92" y="43" rotation="-80"/>
+			<text str="20" align="center" valign="middle" x="90" y="35" rotation="-70"/>
+			<text str="30" align="center" valign="middle" x="87" y="29" rotation="-60"/>
+			<text str="40" align="center" valign="middle" x="83" y="22" rotation="-50"/>
+			<text str="50" align="center" valign="middle" x="78" y="17" rotation="-40"/>
+			<text str="60" align="center" valign="middle" x="72" y="13" rotation="-30"/>
+			<text str="70" align="center" valign="middle" x="65" y="10" rotation="-20"/>
+			<text str="80" align="center" valign="middle" x="57" y="8" rotation="-10"/>
+			<text str="90" align="center" valign="middle" x="50" y="7" rotation="0"/>
+			<text str="100" align="center" valign="middle" x="43" y="8" rotation="10"/>
+			<text str="110" align="center" valign="middle" x="35" y="10" rotation="20"/>
+			<text str="120" align="center" valign="middle" x="29" y="13" rotation="30"/>
+			<text str="130" align="center" valign="middle" x="22" y="17" rotation="40"/>
+			<text str="140" align="center" valign="middle" x="17" y="22" rotation="50"/>
+			<text str="150" align="center" valign="middle" x="13" y="29" rotation="60"/>
+			<text str="160" align="center" valign="middle" x="10" y="35" rotation="70"/>
+			<text str="170" align="center" valign="middle" x="8" y="43" rotation="80"/>
+		</background>
+		<foreground>
+			<stroke/>
+		</foreground>
+	</shape>
+</shapes>
