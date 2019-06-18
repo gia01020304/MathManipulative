@@ -22,6 +22,8 @@
 		$this->load->view($subview);
 	}
 	?>
+	
+	<div id="divEditor"></div>
 	<!-- Modal -->
 	<div class="modal fade" id="nameFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">

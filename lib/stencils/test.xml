@@ -1,0 +1,23 @@
+<shapes name="mxgraph.test">
+	<shape name="Quickscroll" id="Quickscroll" h="97.5" w="70" aspect="variable" strokewidth="inherit">
+		<connections>
+			<constraint x="0.5" y="0" perimeter="0" name="N"/>
+			<constraint x="0.5" y="1" perimeter="1" name="S"/>
+		</connections>
+		<background>
+			<path>
+				<move x="20" y="0"/>
+				<line x="20" y="59"/>
+				<line x="0" y="59"/>
+				<line x="35" y="97.5"/>
+				<line x="70" y="59"/>
+				<line x="50" y="59"/>
+				<line x="50" y="0"/>
+				<close/>
+			</path>
+		</background>
+		<foreground>
+			<fillstroke/>
+		</foreground>
+	</shape>
+</shapes>

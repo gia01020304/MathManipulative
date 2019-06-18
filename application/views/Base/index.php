@@ -42,7 +42,7 @@
 				themes[Graph.prototype.defaultThemeName] = xhr[1].getDocumentElement(); 
 				
 				// Main
-				editorUI = new EditorUi(new Editor(urlParams['chrome'] == '0', themes));
+				editorUI = new EditorUi(new Editor(urlParams['chrome'] == '0', themes),document.getElementById('divEditor'));
 				<?php if (isset($shared)): ?>
 					<?php if ($shared->isshare==1): ?>
 						restore(`<?= $shared->value ?>`,`<?= $shared->name ?>`);
