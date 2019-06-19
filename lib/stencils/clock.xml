@@ -1,0 +1,9 @@
+<shapes name="mxgraph.clock">
+	<shape aspect="variable" h="300" name="Clock" id="clock" strokewidth="inherit" w="300">
+		<foreground>
+			<strokewidth width="7"/>
+			<ellipse w="300" h="300" x="0" y="0"></ellipse>
+			<fillstroke strokecolor="#FFEA80"/>
+		</foreground>
+	</shape>
+</shapes>
