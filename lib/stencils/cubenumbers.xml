@@ -1,0 +1,9 @@
+<shapes name="mxgraph.bootstrap">
+<shape class="king" aspect="variable" h="60.0" name="check" strokewidth="inherit" w="70.0">
+    <background>
+          <rect h="100" w="100" x="0" y="0"/>
+    </background>
+    <foreground>
+        <stroke/>
+    </foreground>
+</shape>

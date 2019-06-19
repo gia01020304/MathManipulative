@@ -7,6 +7,7 @@
 <script type="text/javascript" src="<?= base_url() ?>/lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="<?= base_url() ?>/lib/bootstrap-4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?= base_url() ?>/lib/1.css">
+<link rel="stylesheet" href="<?= base_url() ?>/lib/test.css">
 <link href="<?= base_url() ?>/lib/fontawesome-free-5.8.1/css/all.css" rel="stylesheet"> <!--load all styles -->
 <link rel="icon"  href="<?= base_url() ?>/lib/images/favicon.png">
 
