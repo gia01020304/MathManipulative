@@ -40,4 +40,7 @@
 <script type="text/javascript" src="<?= base_url() ?>/lib/svg/d3.min.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/svg/dist/svg.draw.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/1.js"></script>
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.6.0/Chart.bundle.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/konva@3.3.3/konva.min.js"></script>
+
 <!-- <script type="text/javascript" src="./lib/svg/dist/svg.draw.min.js"></script> -->
