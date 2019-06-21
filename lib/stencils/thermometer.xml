@@ -1,0 +1,33 @@
+<shapes name="mxGraph.thermometer">
+		<shape name="Database" h="70" w="70" aspect="variable" strokewidth="inherit">
+		<connections>
+			<constraint x="0.5" y="0" perimeter="0" name="N"/>
+			<constraint x="0.5" y="1" perimeter="0" name="S"/>
+			<constraint x="0" y="0.5" perimeter="0" name="W"/>
+			<constraint x="1" y="0.5" perimeter="0" name="E"/>
+			<constraint x="0" y="0.15" perimeter="0" name="NW"/>
+			<constraint x="0" y="0.85" perimeter="0" name="SW"/>
+			<constraint x="1" y="0.15" perimeter="0" name="NE"/>
+			<constraint x="1" y="0.85" perimeter="0" name="SE"/>
+		</connections>
+		<background>
+			<path>
+				<move x="0" y="50"/>
+				<line x="0" y="10"/>
+                <fillcolor color="#ffff00"/>
+				<arc rx="20" ry="10" x-axis-rotation="0" large-arc-flag="0" sweep-flag="1" x="60" y="10"/>
+				<line x="60" y="50"/>
+				<arc rx="20" ry="10" x-axis-rotation="0" large-arc-flag="0" sweep-flag="1" x="0" y="50"/>
+				<close/>
+			</path>
+		</background>
+		<foreground>
+			<fillstroke/>
+			<!-- <path>
+				<move x="0" y="10"/>
+				<arc rx="30" ry="10" x-axis-rotation="0" large-arc-flag="0" sweep-flag="0" x="60" y="10"/>
+			</path> -->
+			<stroke/>
+		</foreground>
+	</shape>
+</shapes>
