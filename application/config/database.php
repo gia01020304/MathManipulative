@@ -76,8 +76,8 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'username' => 'uwm',
+	'password' => '123456',
 	'database' => 'mathmanipulative',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -94,4 +94,4 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-$db['default']["port"]=3306;
+$db['default']["port"]=3307;
