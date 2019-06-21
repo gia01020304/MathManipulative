@@ -727,6 +727,33 @@
 			<fillstroke/>
 		</foreground>
 	</shape>
+	<shape name="Test" h="100" w="150" aspect="variable" strokewidth="inherit">
+		<connections>
+			<constraint x="0.5" y="0" perimeter="0" name="N"/>
+			<constraint x="0.5" y="1" perimeter="0" name="S"/>
+			<constraint x="0" y="0.5" perimeter="0" name="W"/>
+			<constraint x="1" y="0.5" perimeter="0" name="E"/>
+		</connections>
+		<background>
+			<!-- <roundrect x="0" y="0" w="100" h="100" arcsize="6"/> -->
+			<path>
+				<move x="0" y="0"/>
+				<line x="100" y="0"/>
+				<line x="100" y="25"/>
+				<line x="150" y="25"/>
+				<line x="150" y="75"/>
+				<line x="100" y="75"/>
+				<line x="100" y="100"/>
+				<line x="0" y="100"/>
+				<close/>
+			</path>
+		</background>
+		<foreground>
+			<fillstroke/>
+				<ellipse x="33.33" y="33.33" w="33.33" h="33.33"/>
+			<stroke/>
+		</foreground>
+	</shape>
 	<shape name="Sequential Data" h="99" w="99" aspect="variable" strokewidth="inherit">
 		<connections>
 			<constraint x="0.5" y="0" perimeter="0" name="N"/>
