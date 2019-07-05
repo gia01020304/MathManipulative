@@ -1,0 +1,18 @@
+<shapes name="mxGraph.circlePieces">
+	<shape name="Half Circle" h="49" w="98" aspect="variable" strokewidth="inherit">
+		<connections>
+			<constraint x="0.5" y="0" perimeter="0" name="N"/>
+			<constraint x="0.5" y="1" perimeter="0" name="S"/>
+		</connections>
+		<background>
+			<path>
+				<move x="0" y="0"/>
+				<arc rx="44.5" ry="44.5" x-axis-rotation="0" large-arc-flag="1" sweep-flag="0" x="98" y="0"/>
+				<close/>
+			</path>
+		</background>
+		<foreground>
+			<fillstroke/>
+		</foreground>
+	</shape>
+</shapes>
