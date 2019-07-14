@@ -246,7 +246,8 @@
 				},
 				success:function (resp) {
 					if (resp.success) {
-						debugger;
+						
+						$('#btn-Save').show();
 						$('#popupLogin').modal('hide');
 						$('#authenticate').remove();
 						$('#processuser').append(resp.data);

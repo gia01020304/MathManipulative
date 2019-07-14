@@ -9,6 +9,11 @@
  		</div>
  	</div>
  	<script type="text/javascript">
+ 		//2019/07/08 gnguyen start add
+ 		$(document).ready(function () {
+ 			$('#btn-Save').show();
+ 		})
+ 		//2019/07/08 gnguyen end add
  		$('#btnLogout').click(function(event) {
  			clearMsgParent();
  			triggerSpinner();
