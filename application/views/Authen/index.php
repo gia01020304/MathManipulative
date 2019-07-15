@@ -58,7 +58,7 @@
 	}
 </style>
 <div id="authenticate" style="">
-	<div id="authen"class="manageruser">
+	<div id="authen" class="manageruser">
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popupLogin" style="font-size: 12px;">Login</button>
 	</div>
 

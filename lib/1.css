@@ -178,12 +178,6 @@
 	cursor: pointer;
 	font-size: 24px;
 }
-* { box-sizing: border-box; }
-
-body { font-family: sans-serif; }
-
-
-body { font-family: sans-serif; }
 
 
 .card {
@@ -195,6 +189,7 @@ body { font-family: sans-serif; }
   transform-origin: center right;
   transition: transform 1s;
   border: red 1px;
+  border-radius:100%;
 }
 .red-color {
 	background: #DD4050;
@@ -229,3 +224,115 @@ body { font-family: sans-serif; }
 	/* background: #F7E85C; */
   	transform: rotateY(180deg);
 }
+.btn-perform{
+	font-size: 22px;
+	cursor: pointer;
+	float: right;
+	padding: 12px;
+}
+.btn-perform:hover {
+	color: red;
+}
+/* 
+button{
+	margin-top: 100px;
+	padding: 10px 50px;
+	cursor: pointer;
+	background-color: #40271c;
+	outline: none;
+	border: none;
+	color: white;
+	border: 1px solid black;
+  }
+  
+  button:hover{
+	background-color: #000;
+	color: orange;
+	transition: 0.2s linear;
+  }
+  
+  .container {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	perspective: 1000px;
+	margin: auto;
+	margin-top: 100px;
+  }
+  
+  #cube {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: transform 0.7s linear;
+	transform: translateZ( -100px );
+  }
+  
+  #cube figure {
+	margin: 0;
+	width: 196px;
+	height: 196px;
+	display: block;
+	position: absolute;
+	border: 4px solid black;
+	color: white;
+  }
+  
+  #cube .uno    { transform: rotateY(   0deg ) translateZ( 100px ); background-color: #40271c; opacity:0.9; }
+  #cube .dos    { transform: rotateX( 180deg ) translateZ( 100px ); background-color: #40271c; opacity:0.9; }
+  #cube .tres   { transform: rotateY(  90deg ) translateZ( 100px ); background-color: #40271c; opacity:0.9; }
+  #cube .cuatro { transform: rotateY( -90deg ) translateZ( 100px ); background-color: #40271c; opacity:0.9; }
+  #cube .cinco  { transform: rotateX(  90deg ) translateZ( 100px ); background-color: #40271c; opacity:0.9; }
+  #cube .seis   { transform: rotateX( -90deg ) translateZ( 100px ); background-color: #40271c; opacity:0.9; }
+  
+  #cube .uno    {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 50px;
+	font-weight: bold;
+  }
+  #cube .dos    {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 50px;
+	font-weight: bold;
+  }
+  #cube .tres   {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 50px;
+	font-weight: bold;
+  }
+  #cube .cuatro {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 50px;
+	font-weight: bold;
+  }
+  #cube .cinco  {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 50px;
+	font-weight: bold;
+  }
+  #cube .seis   {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 50px;
+	font-weight: bold;
+  } */
+  
+  
+  
+  
+  
+  
+  
+  

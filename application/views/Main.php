@@ -73,7 +73,7 @@
 </div>
 <input type="hidden" name="" value="0" id="divType">
 </body>
-<script type="text/javascript">
+<script>
 	$('#frmFileName').submit(function(event) {
 		event.preventDefault();
 	});
