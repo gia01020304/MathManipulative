@@ -11,7 +11,7 @@
  	<script type="text/javascript">
  		//2019/07/08 gnguyen start add
  		$(document).ready(function () {
- 			$('#btn-Save').show();
+ 			isAuthen=true;
  		})
  		//2019/07/08 gnguyen end add
  		$('#btnLogout').click(function(event) {
@@ -23,6 +23,7 @@
  				dataType: 'json',
  				success:function (response) {
  					if (response.success) {
+ 						$('#btn-Save').hide();
  						$('#processuser').append(response.data);
  						$('#user').remove();
  					}else{
