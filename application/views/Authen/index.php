@@ -140,7 +140,7 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#divFileName').text('Untitled');
+			$('#divFileName').text('');
 			$('#frmlogin').submit(function(event) {
 				event.preventDefault();
 			});
