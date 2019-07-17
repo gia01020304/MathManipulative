@@ -358,7 +358,15 @@ button{
 	  .geSprite-ruler {cursor: pointer; background-size: cover !important;background-image: url(./images/ruler.svg) !important;}
 	  .geSprite-new-file {cursor: pointer; background-size: cover !important;background-image: url(./images/newfile.svg) !important;}
 	  .geSprite-shadow { cursor: pointer; background-size: cover !important;background-image: url(./images/shadow.svg) !important;}
-  		.geSprite-protractor {cursor: pointer; background-size: cover !important;background-image: url(./images/protractor.svg) !important;}
+		  .geSprite-protractor {cursor: pointer; background-size: cover !important;background-image: url(./images/protractor.svg) !important;}
+		  .background-menu-item {
+			border-bottom:2px solid #e5e5e5;
+			  position: sticky;
+			  top: 0px;
+			  width: inherit;
+			  z-index: 1000;
+			  background: #FBFBFB;
+		  }
   
   
   
