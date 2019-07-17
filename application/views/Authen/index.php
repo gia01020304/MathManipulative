@@ -59,7 +59,7 @@
 </style>
 <div id="authenticate" style="">
 	<div id="authen" class="manageruser">
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popupLogin" style="font-size: 12px;">Login</button>
+		<a href="#" data-toggle="modal" data-target="#popupLogin" class="login-link" ><i class="fas fa-lock"></i></a>
 	</div>
 
 	<div class="modal fade" id="popupLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -92,7 +92,7 @@
 									<input tabindex="2" type="password" class="form-control" id="Password" name="Password" required autocomplete="new-password">
 								</div>
 							</div>
-							<p class="text-center">NOT REGISTERED? <span style="color: red"><a href="#" id="RegisterHere">REGISTER HERE</a></span></p>
+							<!-- <p class="text-center">NOT REGISTERED? <span style="color: red"><a href="#" id="RegisterHere">REGISTER HERE</a></span></p> -->
 							<div id="footer" class="float-right">
 								<button tabindex="3" type="submit" class="btn btn-primary" id="btnLogin">Sign In</button> 
 							</div>

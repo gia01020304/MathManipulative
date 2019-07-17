@@ -328,7 +328,7 @@ div.mxWindow .geButton {
 	background-color: #f8f9fa;
 }
 .geSidebarContainer {
-	background:#E2E2E2;
+	background:#fbfbfb;
 	overflow:hidden;
 	position:absolute;
 	overflow:auto;
@@ -551,8 +551,8 @@ div.mxWindow .geButton {
 .geSprite-bold { background-position: 0 -70px; background-size: cover}
 .geSprite-bottom { background-position: 0 -140px; background-size: cover}
 .geSprite-center { background-position: 0 -210px; background-size: cover}
-.geSprite-delete { background-position: 0 -280px; background-size: cover}
-.geSprite-fillcolor { background-position: 0 -350px; background-size: cover}
+/* .geSprite-delete { background-position: 0 -280px; background-size: cover} */
+/* .geSprite-fillcolor { background-position: 0 -350px; background-size: cover} */
 .geSprite-fit { background-position: 0 -420px; background-size: cover}
 .geSprite-fontcolor { background-position: 0 -490px; background-size: cover}
 .geSprite-gradientcolor { background-position: 0 -560px; background-size: cover}
@@ -563,13 +563,13 @@ div.mxWindow .geButton {
 .geSprite-print { background-position: 0 -910px; background-size: cover}
 .geSprite-redo { background-position: 0 -980px; background-size: cover}
 .geSprite-right { background-position: 0 -1050px; background-size: cover}
-.geSprite-shadow { background-position: 0 -1120px; background-size: cover}
-.geSprite-strokecolor { background-position: 0 -1190px; background-size: cover}
+/* .geSprite-shadow { background-position: 0 -1120px; background-size: cover} */
+/* .geSprite-strokecolor { background-position: 0 -1190px; background-size: cover} */
 .geSprite-top { background-position: 0 -1260px; background-size: cover}
 .geSprite-underline { background-position: 0 -1330px; background-size: cover}
 .geSprite-undo { background-position: 0 -1400px; background-size: cover}
-.geSprite-zoomin { background-position: 0 -1470px; background-size: cover}
-.geSprite-zoomout { background-position: 0 -1540px; background-size: cover}
+/* .geSprite-zoomin { background-position: 0 -1470px; background-size: cover}
+.geSprite-zoomout { background-position: 0 -1540px; background-size: cover} */
 .geSprite-arrow { background-position: 0 -1610px; background-size: cover}
 .geSprite-linkedge { background-position: 0 -1750px; background-size: cover}
 .geSprite-straight { background-position: 0 -1890px; background-size: cover}
