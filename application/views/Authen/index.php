@@ -14,18 +14,9 @@
 	.modal-login .modal-footer {
 		background: #f2f2f2;
 	}
-	.modal-login h4 {
-		text-align: center;
-		font-size: 26px;
-	}
-	.modal-login label {
-		font-weight: normal;
-		font-size: 13px;
-	}
-	.modal-login .form-control, .modal-login .btn {
-		min-height: 38px;
-		border-radius: 2px; 
-	}
+	
+	
+	
 	.modal-login .hint-text {
 		text-align: center;
 	}
@@ -34,18 +25,8 @@
 		top: 15px;
 		right: 15px;
 	}
-	.modal-login .checkbox-inline {
-		margin-top: 12px;
-	}
-	.modal-login input[type="checkbox"]{
-		margin-top: 2px;
-	}
-	.modal-login .btn {
-		min-width: 100px;
-		background: #3498db;
-		border: none;
-		line-height: normal;
-	}
+	
+	
 	.modal-login .btn:hover, .modal-login .btn:focus {
 		background: #248bd0;
 	}
@@ -81,14 +62,15 @@
 							<input style="display:none" type="text" name="fakeusernameremembered"/>
 							<input style="display:none" type="password" name="fakepasswordremembered"/>
 							<div class="form-group row">
-								<label for="UserName" class="col-12 col-md-3 form-control-label">User Name</label>
-								<div class="col-10 col-md-6">
+								<label for="UserName" class="col-12 form-control-label">User Name</label>
+								<div class="col-11">
 									<input tabindex="1" type="text" class="form-control" id="UserName" name="UserName" required autoComplete="off">
 								</div>
 							</div>
+
 							<div class="form-group row">
-								<label for="Password" class="col-12 col-md-3 form-control-label">Password</label>
-								<div class="col-10 col-md-6">
+								<label for="Password" class="col-12 form-control-label">Password</label>
+								<div class="col-11">
 									<input tabindex="2" type="password" class="form-control" id="Password" name="Password" required autocomplete="new-password">
 								</div>
 							</div>
