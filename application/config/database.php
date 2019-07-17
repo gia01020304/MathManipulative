@@ -93,7 +93,7 @@ $query_builder = TRUE;
 // 	'failover' => array(),
 // 	'save_queries' => TRUE
 // );
-$db['default']["port"]=3306;
+// $db['default']["port"]=3306;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
