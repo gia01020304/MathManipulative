@@ -156,7 +156,8 @@ class ShareCL extends CI_Controller {
 	{
 		$rs=$this->ShareModel->GetShared($Key);
 		if (!array_key_exists('id_user', $this->session->userdata)) {
-			$rs->name='Untitled';
+			//2019/07/17 gnguyen start mod
+			$rs->name='';
 		}else{
 			if ($this->session->userdata['id_user']==$rs->iduser) {
 				$rs->isshare=1;
