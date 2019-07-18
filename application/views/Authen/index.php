@@ -65,7 +65,7 @@
   								<div class="input-group-prepend">
     								<span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
   								</div>
-								  <input tabindex="1" type="text" placeholder="User name" class="form-control none-border-input" id="UserName" name="UserName" required autoComplete="off">
+								  <input tabindex="1" type="text" placeholder="User name" class="form-control" id="UserName" name="UserName" required autoComplete="off">
 							</div>
 							<div class="input-group mb-3">
   								<div class="input-group-prepend">
