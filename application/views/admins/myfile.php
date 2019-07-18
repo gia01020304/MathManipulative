@@ -101,7 +101,7 @@
       },
       success:function (resp) {
         if (resp.success) {
-          debugger;
+         
           changeStaus(elt,status,id);
         }else{
           alert('Error');
