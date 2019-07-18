@@ -11,6 +11,8 @@
 		<div class="form-group row">
 			<label for="UserName" class="col-12 col-md-3 form-control-label">User Name</label>
 			<div class="col-10 col-md-6">
+			</div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
 				<input tabindex="1" type="text" class="form-control" id="UserName" name="UserName" required>
 			</div>
 		</div>

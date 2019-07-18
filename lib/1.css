@@ -477,3 +477,17 @@ button{
 	font-size: 22px;
 	font-weight: bold;
 }
+.btn-login {
+	background: #17997F !important;
+	cursor: pointer;
+	font-weight: bold !important;
+	color: white !important;
+}
+.btn-login:hover {
+	background: #16977D !important;
+}
+.none-border-input {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}

@@ -61,22 +61,20 @@
 						<form id="frmlogin" autocomplete="off">
 							<input style="display:none" type="text" name="fakeusernameremembered"/>
 							<input style="display:none" type="password" name="fakepasswordremembered"/>
-							<div class="form-group row">
-								<label for="UserName" class="col-12 form-control-label">User Name</label>
-								<div class="col-11">
-									<input tabindex="1" type="text" class="form-control" id="UserName" name="UserName" required autoComplete="off">
-								</div>
+							<div class="input-group mb-3">
+  								<div class="input-group-prepend">
+    								<span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+  								</div>
+								  <input tabindex="1" type="text" placeholder="User name" class="form-control none-border-input" id="UserName" name="UserName" required autoComplete="off">
 							</div>
-
-							<div class="form-group row">
-								<label for="Password" class="col-12 form-control-label">Password</label>
-								<div class="col-11">
-									<input tabindex="2" type="password" class="form-control" id="Password" name="Password" required autocomplete="new-password">
-								</div>
+							<div class="input-group mb-3">
+  								<div class="input-group-prepend">
+    								<span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+  								</div>
+								  <input tabindex="2" type="password" placeholder="Password" class="form-control" id="Password" name="Password" required autocomplete="new-password">
 							</div>
-							<!-- <p class="text-center">NOT REGISTERED? <span style="color: red"><a href="#" id="RegisterHere">REGISTER HERE</a></span></p> -->
-							<div id="footer" class="float-right">
-								<button tabindex="3" type="submit" class="btn btn-primary" id="btnLogin">Sign In</button> 
+							<div class="mb-3">
+							<button tabindex="3" type="submit" class="form-control btn-login" id="btnLogin">Sign In</button> 
 							</div>
 						</form>
 						
