@@ -20,6 +20,7 @@
 	var editorUI=null;
 	var line=null;
 	var isAuthen=false;
+	var menus = '<?= $menusString ?>';
 </script>
 
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Init.js"></script>

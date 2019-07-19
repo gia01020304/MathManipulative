@@ -46,6 +46,15 @@ class UsersModel extends MY_Model {
 		$rs=$query->row();
 		return $rs;
 	}
+	public function UpdateUser($userId, $newPassword){
+		$sql = "
+        UPDATE users
+        SET `password` = ?
+        WHERE `id` = ?	
+        ";
+        $rs = $this->db->query($sql, [$newPassword,$userId]);
+        return $rs;
+	}
 
 }
 

@@ -29,7 +29,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">File</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Create File</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -40,13 +40,13 @@
 					<div class="alert alert-success unactive" role="alert" id="msgsuccessFileName">
 					</div>
 					<form id="frmFileName">
-						<div class="form-group row">
-							<!-- <label for="FileName" class="col-12 col-md-3 form-control-label">File Name</label> -->
-							<div class="col-10 col-md-6">
-								<input tabindex="1" type="text" class="form-control" placeholder="File Name" id="FileName" name="FileName" required >
+						<div class="input-group mb-3 bottom-border">
+  								<div class="input-group-prepend">
+    								<span class="input-group-text none-border-input white-background" id="basic-addon1"><i class="fas fa-file-signature"></i></span>
+  								</div>
+								  <input tabindex="1" type="text" class="form-control none-border-input" placeholder="File Name" id="FileName" name="FileName" required >
 							</div>
-						</div>
-						<button type='submit' class="btn btn-primary float-right" id="btnSaveFile">Save</button>
+						<button type='submit' class="btn btn-primary form-control btn-login" id="btnSaveFile">Save File</button>
 					</form>
 
 				</div>

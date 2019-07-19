@@ -113,6 +113,12 @@
                                 <span>My manipulations</span>
                             </a>
                         </li>
+                        <li class="li-item" >
+                            <a href="<?= site_url('MenuManagementCL') ?>" id="menuManagement">
+                                <i class="fas fa-sitemap"></i>
+                                <span>Menu management</span>
+                            </a>
+                        </li>
                     </ul>
                 <?php endif ?>
                 <!-- sidebar menu: : style can be found in sidebar.less -->

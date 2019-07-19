@@ -1,0 +1,15 @@
+<Menu>
+    <Object Key = "background" Value ="background" Visible = "true">Backgrounds</Object>
+    <Object Key = "attributeBlock" Value ="attributeBlock" Visible = "true">Attribute Blocks</Object>
+    <Object Key = "algebraTiles" Value ="algebraTiles" Visible = "true">Algebra Tiles</Object>
+    <Object Key = "baseTenBlocks" Value ="baseTenBlocks" Visible = "true">Base Ten Blocks</Object>
+    <Object Key = "centimeterCubes" Value ="centimeterCubes" Visible = "true">Centimeter Cubes</Object>
+    <Object Key = "connectingCubes" Value ="connectingCubes" Visible = "true">Connecting Cubes</Object>
+    <Object Key = "clock" Value ="clock" Visible = "true">Clock</Object>
+    <Object Key = "integerCounters" Value ="integerCounters" Visible = "true">Integer Counters</Object>
+    <Object Key = "fractionTiles" Value ="fractionTiles" Visible = "true">Fraction Tiles</Object>
+    <Object Key = "money" Value ="money" Visible = "true">Money</Object>
+    <Object Key = "numberLine" Value ="numberLine" Visible = "true">Number Line</Object>
+    <Object Key = "thermometer" Value ="thermometer" Visible = "true">Thermometer</Object>
+    <Object Key = "patternBlocks" Value ="patternBlocks" Visible = "true">Pattern Blocks</Object>
+</Menu>
