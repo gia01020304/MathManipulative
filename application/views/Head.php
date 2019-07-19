@@ -1,4 +1,4 @@
-<?php $version = '1.0' ?>
+<?php $version = '1.1' ?>
 
 <title>Math Manipulation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">

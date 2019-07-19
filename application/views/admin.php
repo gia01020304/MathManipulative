@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <?php $version = '1.0' ?>
+    <?php $version = '1.1' ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Math Manipulation</title>
