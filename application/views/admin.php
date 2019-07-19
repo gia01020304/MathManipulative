@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <?php $version = '1.1' ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Math Manipulation</title>
@@ -16,7 +17,7 @@
     <!-- Theme style -->
     <script src="<?= base_url() ?>/lib/jquery.js"></script>
     <link rel="stylesheet" href="<?= base_url() ?>/lib/admins/AdminLTE.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/lib/1.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/lib/1.css?v=<?=$version?>">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
         <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -170,8 +171,8 @@
     <script src="<?= base_url() ?>/lib/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url() ?>/lib/admins/adminlte.min.js"></script>
-    <script src="<?= base_url() ?>/lib/admins/admin.js"></script>
-    <script src="<?= base_url() ?>/lib/1.js"></script>
+    <script src="<?= base_url() ?>/lib/admins/admin.js?v=<?=$version?>"></script>
+    <script src="<?= base_url() ?>/lib/1.js?v=<?=$version?>"></script>
 
 </body>
 </html>
