@@ -451,10 +451,9 @@ button{
 	background-image: url(./images/protractor.svg) !important;
 }
 .background-menu-item {
-	border: 2px solid #e5e5e5;
+	border: 4px solid #e5e5e5;
 	position: sticky;
 	top: 0px;
-	width: inherit;
 	z-index: 1000;
 	background: #fbfbfb;
 	font-weight: bold;
