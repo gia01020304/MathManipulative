@@ -41,9 +41,9 @@
 					</div>
 					<form id="frmFileName">
 						<div class="form-group row">
-							<label for="FileName" class="col-12 col-md-3 form-control-label">File Name</label>
+							<!-- <label for="FileName" class="col-12 col-md-3 form-control-label">File Name</label> -->
 							<div class="col-10 col-md-6">
-								<input tabindex="1" type="text" class="form-control" id="FileName" name="FileName" required >
+								<input tabindex="1" type="text" class="form-control" placeholder="File Name" id="FileName" name="FileName" required >
 							</div>
 						</div>
 						<button type='submit' class="btn btn-primary float-right" id="btnSaveFile">Save</button>

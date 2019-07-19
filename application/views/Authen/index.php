@@ -123,6 +123,33 @@
 			$('#divFileName').text('');
 			$('#frmlogin').submit(function(event) {
 				event.preventDefault();
+				$.ajax({
+				url: '<?php echo site_url("AuthenticateCL/Login") ?>',
+				type: 'POST',
+				dataType: 'json',
+				data: {
+					UserName: $('#UserName').val(),
+					Password:$('#Password').val()
+				},
+				success:function (resp) {
+					if (resp.success) {
+						
+						$('#btn-Save').show();
+						$('#popupLogin').modal('hide');
+						$('#authenticate').remove();
+						$('#processuser').append(resp.data);
+						$('.modal-backdrop.fade.show').remove();
+						processFeature();
+					}else{
+						addMsgError(resp.msg);
+					}
+				},
+				error:function (resp) {
+					addMsgError("Login Error!");
+				}
+			}).always(function (argument) {
+				removeSpinner();
+			})
 			});
 			$('#frmregister').submit(function(event) {
 				event.preventDefault();
@@ -200,8 +227,7 @@
 			})
 		});
 		$('#btnLogin').click(function(event) {
-			clearMsg();
-			$("#frmlogin").validate();
+		/*	clearMsg();
 			var isValid=true;
 			var msg="";
 			if ($('#UserName').val()==="") {
@@ -243,7 +269,7 @@
 				}
 			}).always(function (argument) {
 				removeSpinner();
-			})
+			})*/
 		});
 		$('#RegisterHere').click(function(event) {
 			clearMsg();
