@@ -44,9 +44,9 @@
 	</div>
 
 	<div class="modal fade" id="popupLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-login" role="document">
+		<div class="modal-dialog modal-login" style="width:400px;" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+				<div class="modal-header" style="background:#FFFFFF;border:none;">
 					<h4 class="modal-title" id="title-login">Login</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -61,17 +61,17 @@
 						<form id="frmlogin" autocomplete="off">
 							<input style="display:none" type="text" name="fakeusernameremembered"/>
 							<input style="display:none" type="password" name="fakepasswordremembered"/>
-							<div class="input-group mb-3">
+							<div class="input-group mb-3 bottom-border">
   								<div class="input-group-prepend">
-    								<span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+    								<span class="input-group-text none-border-input white-background" id="basic-addon1"><i class="fa fa-user"></i></span>
   								</div>
-								  <input tabindex="1" type="text" placeholder="User name" class="form-control" id="UserName" name="UserName" required autoComplete="off">
+								  <input tabindex="1" type="text" placeholder="User name" class="form-control none-border-input" id="UserName" name="UserName" required autoComplete="off">
 							</div>
-							<div class="input-group mb-3">
+							<div class="input-group mb-3 bottom-border">
   								<div class="input-group-prepend">
-    								<span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+    								<span class="input-group-text none-border-input white-background" id="basic-addon1"><i class="fa fa-lock"></i></span>
   								</div>
-								  <input tabindex="2" type="password" placeholder="Password" class="form-control" id="Password" name="Password" required autocomplete="new-password">
+								  <input tabindex="2" type="password" placeholder="Password" class="form-control none-border-input" id="Password" name="Password" required autocomplete="new-password">
 							</div>
 							<div class="mb-3">
 							<button tabindex="3" type="submit" class="form-control btn-login" id="btnLogin">Sign In</button> 
@@ -201,6 +201,7 @@
 		});
 		$('#btnLogin').click(function(event) {
 			clearMsg();
+			$("#frmlogin").validate();
 			var isValid=true;
 			var msg="";
 			if ($('#UserName').val()==="") {

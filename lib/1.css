@@ -487,7 +487,11 @@ button{
 	background: #16977D !important;
 }
 .none-border-input {
-	border-top: none;
-	border-left: none;
-	border-right: none;
+	border: none;
+}
+.white-background {
+	background: white;
+}
+.bottom-border {
+	border-bottom:1px solid #CCD2D8;
 }
