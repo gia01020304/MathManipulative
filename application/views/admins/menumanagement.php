@@ -1,3 +1,4 @@
+<span style="margin-left:40px;">Select the menu items which you want to show and click "Save" button</span>
 <div class="container-fluid" style="margin-left:80px;margin-right:80px;">
 <?php
 if (isset($isSaveSuccessful)) {?>
