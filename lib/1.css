@@ -428,7 +428,7 @@ button{
 .geSprite-hand-tool {
 	cursor: pointer;
 	background-size: cover !important;
-	background-image: url(./images/handtool.svg) !important;
+	background-image: url(./images/hand.png) !important;
 }
 .geSprite-ruler {
 	cursor: pointer;

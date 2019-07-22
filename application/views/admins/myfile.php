@@ -23,7 +23,7 @@
       </form>
     </div>
     <!-- /.box-header -->
-    <div class="box-body" style="overflow: auto;max-height: 300px" id="bodyTable">
+    <div class="box-body" style="overflow:auto;" id="bodyTable">
       <table class="table table-bordered table-hover" id="myTable">
         <tr>
          <th>#</th>
