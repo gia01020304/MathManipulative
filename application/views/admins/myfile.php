@@ -92,7 +92,7 @@
   function sendToServer(id,status,elt) {
     triggerSpinner()
     $.ajax({
-      url: '<?= site_url('ShareCL/ChangeStatusShare') ?>',
+      url: '<?= base_url() ?>ShareCL/ChangeStatusShare',
       type: 'POST',
       dataType: 'json',
       data: {

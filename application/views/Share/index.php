@@ -11,7 +11,7 @@
      <?php foreach ($urls as $value): ?>
       <tr>
         <th scope="row"><?= $i++ ?></th>
-        <td><a target="_blank" href="<?=site_url('ShareCL/Share/').$value->key?>"><?=$value->key?></a></td>
+        <td><a target="_blank" href="<?=base_url()."ShareCL/Share/".$value->key?>"><?=$value->key?></a></td>
       </tr>
     <?php endforeach ?>
   <?php endif ?>

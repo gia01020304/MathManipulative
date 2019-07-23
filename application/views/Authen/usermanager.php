@@ -3,7 +3,7 @@
  		<i class="fas fa-user-circle"style="font-size: 25px;
  		color: #922e40;cursor: pointer;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
  		<div class="dropdown-menu dropdown-menu-right mt-2">
- 			<button class="dropdown-item" type="button"><a target="_blank" href="<?= site_url('ConfigCL') ?>">My Account</a></button>
+ 			<button class="dropdown-item" type="button"><a target="_blank" href="<?= base_url()."ConfigCL" ?>">My Account</a></button>
  			<hr/>
  			<button class="dropdown-item" type="button" id="btnLogout">Logout</button>
  		</div>
@@ -16,7 +16,7 @@
  			clearMsgParent();
  			triggerSpinner();
  			$.ajax({
- 				url: '<?php echo site_url('AuthenticateCL/Logout') ?>',
+ 				url: '<?php echo base_url()."AuthenticateCL/Logout" ?>',
  				type: 'GET',
  				dataType: 'json',
  				success:function (response) {
@@ -42,7 +42,7 @@
  			$('#popup-publish .modal-body').empty();
  			triggerSpinner();
  			$.ajax({
- 				url: '<?php echo site_url('ShareCL/GetAllOfUser') ?>',
+ 				url: '<?php echo base_url()."ShareCL/GetAllOfUser" ?>',
  				type: 'POST',
  				dataType: 'json',
  				success:function (resp) {

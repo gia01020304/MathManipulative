@@ -124,7 +124,7 @@
 			$('#frmlogin').submit(function(event) {
 				event.preventDefault();
 				$.ajax({
-				url: '<?php echo site_url("AuthenticateCL/Login") ?>',
+				url: '<?php echo base_url()."AuthenticateCL/Login" ?>',
 				type: 'POST',
 				dataType: 'json',
 				data: {
@@ -197,7 +197,7 @@
 			}
 			triggerSpinner();
 			$.ajax({
-				url: '<?php echo site_url('AuthenticateCL/Register') ?>',
+				url: '<?php echo base_url()."AuthenticateCL/Register" ?>',
 				type: 'POST',
 				dataType: 'json',
 				data: {
@@ -244,7 +244,7 @@
 			}
 			triggerSpinner();
 			$.ajax({
-				url: '<?php echo site_url("AuthenticateCL/Login") ?>',
+				url: '<?php echo base_url()."AuthenticateCL/Login" ?>',
 				type: 'POST',
 				dataType: 'json',
 				data: {

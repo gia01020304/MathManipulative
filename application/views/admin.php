@@ -51,7 +51,7 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="<?= site_url('ConfigCL') ?>" class="logo">
+            <a href="<?= base_url() . 'ConfigCL' ?>" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini">MM</span>
                 <!-- logo for regular state and mobile devices -->
@@ -109,13 +109,13 @@
                             </a>
                         </li>
                         <li class="li-item" >
-                            <a href="<?= site_url('ConfigCL/getViewMyFile') ?>" id="btnMyFile">
+                            <a href="<?=base_url()?>ConfigCL/getViewMyFile" id="btnMyFile">
                                 <i class="fa fa-file"></i>
                                 <span>My manipulations</span>
                             </a>
                         </li>
                         <li class="li-item" >
-                            <a href="<?= site_url('MenuManagementCL') ?>" id="menuManagement">
+                            <a href="<?= base_url()?>MenuManagementCL" id="menuManagement">
                                 <i class="fas fa-sitemap"></i>
                                 <span>Menu management</span>
                             </a>

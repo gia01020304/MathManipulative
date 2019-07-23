@@ -8,6 +8,7 @@ class ShareCL extends CI_Controller {
 		parent::__construct();
 		$this->load->model('ShareModel');
 		$this->load->model('ConfigModel');
+		$this->load->model('MenuModel');
 	}
 	public function index()
 	{
@@ -165,6 +166,8 @@ class ShareCL extends CI_Controller {
 		}
 		$data["shared"]=$rs;
 		$data["subview"]="Base/index";
+		$menus = $this->getVisibleMenuItem();
+		$data['menusString'] = $menus;
 		$this->load->view('Main', $data);
 		
 	}
@@ -217,6 +220,14 @@ class ShareCL extends CI_Controller {
 			); 
 		}
 		echo json_encode( $arr);
+	}
+	private function getVisibleMenuItem(){
+		$menusItem = $this->MenuModel->GetMenuIsVisible();
+		$menusString = "";
+		foreach($menusItem as $value) {
+			$menusString.= ',' . $value->key;
+		}
+		return $menusString;
 	}
 
 }
