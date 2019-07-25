@@ -41,11 +41,11 @@
 					</div>
 					<form id="frmFileName">
 						<div class="input-group mb-3 bottom-border">
-  								<div class="input-group-prepend">
-    								<span class="input-group-text none-border-input white-background" id="basic-addon1"><i class="fas fa-file-signature"></i></span>
-  								</div>
-								  <input tabindex="1" type="text" class="form-control none-border-input" placeholder="File Name" id="FileName" name="FileName" required >
+							<div class="input-group-prepend">
+								<span class="input-group-text none-border-input white-background" id="basic-addon1"><i class="fas fa-file-signature"></i></span>
 							</div>
+							<input tabindex="1" type="text" class="form-control none-border-input" placeholder="File Name" id="FileName" name="FileName" required >
+						</div>
 						<button type='submit' class="btn btn-primary form-control btn-login" id="btnSaveFile">Save File</button>
 					</form>
 
@@ -74,6 +74,16 @@
 <input type="hidden" name="" value="0" id="divType">
 </body>
 <script>
+	$(document).ready(function () {
+		<?php
+		if (isset($this->session->userdata['roler_user'])) {
+			if ($this->session->userdata['roler_user']==1) {
+				echo "$('#btnShare').show();";
+			}
+			
+		}
+		?>
+	})
 	$('#frmFileName').submit(function(event) {
 		event.preventDefault();
 	});
