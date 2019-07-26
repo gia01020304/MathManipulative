@@ -194,16 +194,21 @@
 	font-size: 24px;
 }
 
-.card {
+.counter-card {
 	margin-left: 12%;
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform-origin: center right;
+	-webkit-transition:transform 1s;
+	transition: transform 1s;
 	transform-style: preserve-3d;
 	transform-origin: center right;
-	transition: transform 1s;
+	visibility:visible;
 	border: red 1px;
 	border-radius: 100%;
+	overflow: visible;
 }
 .red-color {
 	background: #dd4050;
@@ -217,7 +222,10 @@
 .green-color {
 	background: #3eb763;
 }
-.card.is-flipped {
+.counter-card.is-flipped {
+	-webkit-transform:translateX(-100%) rotateY(-180deg);
+	-moz-transform:translateX(-100%) rotateY(-180deg);
+	-o-transform:translateX(-100%) rotateY(-180deg);
 	transform: translateX(-100%) rotateY(-180deg);
 }
 
@@ -226,8 +234,14 @@
 	width: 100%;
 	height: 100%;
 	color: white;
-	backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
 	border-radius: 100%;
+	top: 0;
+	overflow: visible;
 }
 
 .card__face--front {
@@ -235,8 +249,11 @@
 }
 
 .card__face--back {
-	/* background: #F7E85C; */
-	transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 .btn-perform {
 	font-size: 22px;
@@ -494,4 +511,8 @@ button{
 }
 .bottom-border {
 	border-bottom:1px solid #CCD2D8;
+}
+sup {
+	position: unset;
+	vertical-align:super;
 }
