@@ -17,7 +17,6 @@
  				if ($this->session->userdata['roler_user']==1) {
  					echo "$('#btnShare').show();";
  				}
- 				
  			}
  			?>
  		})
