@@ -89,6 +89,7 @@ class AuthenticateCL extends CI_Controller {
 		}else{
 			$this->session->set_userdata('logged_in', $rs->username);
 			$this->session->set_userdata('id_user', $rs->id);
+			$this->session->set_userdata('roler_user', $rs->role);
 			$view=$this->load->view('Authen/usermanager','',true);
 			$arr = array(
 				"success"=>true,

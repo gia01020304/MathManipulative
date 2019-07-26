@@ -11,6 +11,15 @@
  	<script type="text/javascript">
  		//2019/07/08 gnguyen start add
  		isAuthen=true;
+ 		$(document).ready(function () {
+ 			<?php
+ 			if (isset($this->session->userdata['roler_user'])) {
+ 				if ($this->session->userdata['roler_user']==1) {
+ 					echo "$('#btnShare').show();";
+ 				}
+ 			}
+ 			?>
+ 		})
  		//2019/07/08 gnguyen end add
  		$('#btnLogout').click(function(event) {
  			clearMsgParent();
@@ -22,6 +31,7 @@
  				success:function (response) {
  					if (response.success) {
  						$('#btn-Save').hide();
+ 						$('#btnShare').hide();
  						$('#processuser').append(response.data);
  						$('#user').remove();
  					}else{
@@ -32,8 +42,8 @@
  					addMsgErrorParent("Logout error");
  				}
  			}).always(function (argument) {
-				removeSpinner();
-			});
+ 				removeSpinner();
+ 			});
  			
  			
  		});
@@ -53,8 +63,8 @@
  					addMsgErrorParent("Error!");
  				}
  			}).always(function (argument) {
-				removeSpinner();
-			});
+ 				removeSpinner();
+ 			});
  		});
  	</script>
  </div>
