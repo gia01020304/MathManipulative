@@ -26,13 +26,12 @@ class ConfigCL extends CI_Controller
                 $subView = "admins/config";
                 $data['pageName'] = $pageName;
                 $data['subView'] = $subView;
-                $data['webpage'] = $this->getwebpageAddress();
-                $data['helpLink'] = $this->gethelpLinkAddress();
+                $data['webpage'] = $this->getConfig('siteWebpageAdress');
+                $data['helpLink'] = $this->getConfig('siteHelpLinkAddress');
+                $data['landingPage'] = $this->getConfig('landingPage');
                 $this->load->view('admin', $data);
             }
         }
-        $this->load->model('ConfigModel');
-        $this->load->model('ShareModel');
     }
     public function getViewMyFile()
     {
@@ -41,7 +40,7 @@ class ConfigCL extends CI_Controller
         }
         $idUser = $this->session->userdata['id_user'];
         $rs = $this->ShareModel->GetAllOfUser($idUser);
-        $temp = $this->getwebpageAddress();
+        $temp = $this->getConfig('siteWebpageAdress');
         $domain = substr($temp, -1) == '/' ? substr($temp, 0, -1) : $temp;
         foreach ($rs as $value) {
             $value->url = $domain . '/s/' . $value->key;
@@ -65,6 +64,7 @@ class ConfigCL extends CI_Controller
         }
         $datas['siteWebpageAdress'] = $this->input->post('siteWebpageAdress');
         $datas['siteHelpLinkAddress'] = $this->input->post('siteHelpLinkAddress');
+        $datas['landingPage'] = $this->input->post('landingPage');
         $rs = $this->saveData($datas);
         if ($rs === true) {
             $data['isSaveSuccessful'] = true;
@@ -91,23 +91,14 @@ class ConfigCL extends CI_Controller
         }
         return $rs;
     }
-    private function getwebpageAddress()
+    private function getConfig($configKey)
     {
-        $webpage = $this->ConfigModel->GetValues('siteWebpageAdress');
+        $webpage = $this->ConfigModel->GetValues($configKey);
         if (!empty($webpage)) {
             return $webpage->value;
         }
         return "";
     }
-    private function gethelpLinkAddress()
-    {
-        $helpLink = $this->ConfigModel->GetValues('siteHelpLinkAddress');
-        if (!empty($helpLink)) {
-            return $helpLink->value;
-        }
-        return "";
-    }
-
 }
 
 /* End of file AuthenticateCL.php */

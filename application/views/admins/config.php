@@ -19,6 +19,11 @@ if (isset($isSaveSuccessful)) {?>
         <input type="text" value="<?=$helpLink?>" name="siteHelpLinkAddress" class="form-control" id="help-link">
       </div>
       <div class="form-group">
+        <label for="landing-page">Landing page:</label>
+        <input type="text" value="<?=$landingPage?>" name="landingPage" class="form-control" id="landing-page">
+      </div>
+
+      <div class="form-group">
         <label for="logo">Site logo:</label>
         <div class="row">
           <div class="col-sm-6">

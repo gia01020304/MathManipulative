@@ -61,7 +61,7 @@ if ( ! function_exists('site_url'))
 	 * @param	string	$protocol
 	 * @return	string
 	 */
-	function site_url($uri = '', $protocol = NULL)
+	function site_url_math_site($uri = '', $protocol = NULL)
 	{
 		return get_instance()->config->site_url($uri, $protocol);
 	}
@@ -160,8 +160,8 @@ if ( ! function_exists('anchor'))
 		$title = (string) $title;
 
 		$site_url = is_array($uri)
-			? site_url($uri)
-			: (preg_match('#^(\w+:)?//#i', $uri) ? $uri : site_url($uri));
+			? site_url_math_site($uri)
+			: (preg_match('#^(\w+:)?//#i', $uri) ? $uri : site_url_math_site($uri));
 
 		if ($title === '')
 		{
@@ -195,7 +195,7 @@ if ( ! function_exists('anchor_popup'))
 	function anchor_popup($uri = '', $title = '', $attributes = FALSE)
 	{
 		$title = (string) $title;
-		$site_url = preg_match('#^(\w+:)?//#i', $uri) ? $uri : site_url($uri);
+		$site_url = preg_match('#^(\w+:)?//#i', $uri) ? $uri : site_url_math_site($uri);
 
 		if ($title === '')
 		{
@@ -533,7 +533,7 @@ if ( ! function_exists('redirect'))
 	{
 		if ( ! preg_match('#^(\w+:)?//#i', $uri))
 		{
-			$uri = site_url($uri);
+			$uri = site_url_math_site($uri);
 		}
 
 		// IIS environment likely? Use 'refresh' for better compatibility

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class AuthenticateCL extends CI_Controller {
+class AuthenticateCL extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();
