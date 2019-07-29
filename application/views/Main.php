@@ -74,16 +74,6 @@
 <input type="hidden" name="" value="0" id="divType">
 </body>
 <script>
-	$(document).ready(function () {
-		<?php
-		if (isset($this->session->userdata['roler_user'])) {
-			if ($this->session->userdata['roler_user']==1) {
-				echo "$('#btnShare').show();";
-			}
-			
-		}
-		?>
-	})
 	$('#frmFileName').submit(function(event) {
 		event.preventDefault();
 	});
