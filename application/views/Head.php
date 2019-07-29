@@ -22,6 +22,7 @@
 	var editorUI=null;
 	var line=null;
 	var isAuthen=false;
+	var isAdmin=false;
 	var menus = '<?= $menusString ?>';
 </script>
 

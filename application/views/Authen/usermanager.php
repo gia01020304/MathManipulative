@@ -15,7 +15,7 @@
  			<?php
  			if (isset($this->session->userdata['roler_user'])) {
  				if ($this->session->userdata['roler_user']==1) {
- 					echo "$('#btnShare').show();";
+ 					echo "isAdmin=true;";
  				}
  			}
  			?>

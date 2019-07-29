@@ -132,8 +132,11 @@
 					Password:$('#Password').val()
 				},
 				success:function (resp) {
+					debugger;
 					if (resp.success) {
-						
+						if (resp.role_user==1) {
+							$('#btnShare').show();
+						}
 						$('#btn-Save').show();
 						$('#popupLogin').modal('hide');
 						$('#authenticate').remove();

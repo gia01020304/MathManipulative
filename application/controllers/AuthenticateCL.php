@@ -92,6 +92,7 @@ class AuthenticateCL extends MY_Controller {
 			$this->session->set_userdata('roler_user', $rs->role);
 			$view=$this->load->view('Authen/usermanager','',true);
 			$arr = array(
+				"role_user"=>$rs->role,
 				"success"=>true,
 				"msg"=>"Login success",
 				"data"=>$view
