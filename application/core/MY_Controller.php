@@ -28,13 +28,13 @@ class MY_Controller extends CI_Controller
                 //get landing page
                 $landingPage = $this->ConfigModel->GetValues('landingPage');
                 $this->load->helper('url');
-                //redirect($landingPage->value);
-                //exit(3);
+                redirect($landingPage->value);
+                exit(3);
             }
         } else {
-            header('HTTP/1.1 503 Service Unavailable.', true, 503);
-            echo 'Somthing go wrong with the wordpress load file';
-            exit(3); // EXIT_CONFIG
+            // header('HTTP/1.1 503 Service Unavailable.', true, 503);
+            // echo 'Somthing go wrong with the wordpress load file';
+            // exit(3); // EXIT_CONFIG
         }
     }
 }
