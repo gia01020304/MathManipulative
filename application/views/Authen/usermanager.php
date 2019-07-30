@@ -11,15 +11,13 @@
  	<script type="text/javascript">
  		//2019/07/08 gnguyen start add
  		isAuthen=true;
- 		$(document).ready(function () {
- 			<?php
- 			if (isset($this->session->userdata['roler_user'])) {
- 				if ($this->session->userdata['roler_user']==1) {
- 					echo "isAdmin=true;";
- 				}
+ 		<?php
+ 		if (isset($this->session->userdata['roler_user'])) {
+ 			if ($this->session->userdata['roler_user']==1) {
+ 				echo "isAdmin=true;";
  			}
- 			?>
- 		})
+ 		}
+ 		?>
  		//2019/07/08 gnguyen end add
  		$('#btnLogout').click(function(event) {
  			clearMsgParent();
