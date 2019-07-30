@@ -62,19 +62,19 @@
 							<input style="display:none" type="text" name="fakeusernameremembered"/>
 							<input style="display:none" type="password" name="fakepasswordremembered"/>
 							<div class="input-group mb-3 bottom-border">
-  								<div class="input-group-prepend">
-    								<span class="input-group-text none-border-input white-background" id="basic-addon1"><i class="fa fa-user"></i></span>
-  								</div>
-								  <input tabindex="1" type="text" placeholder="User name" class="form-control none-border-input" id="UserName" name="UserName" required autoComplete="off">
+								<div class="input-group-prepend">
+									<span class="input-group-text none-border-input white-background" id="basic-addon1"><i class="fa fa-user"></i></span>
+								</div>
+								<input tabindex="1" type="text" placeholder="User name" class="form-control none-border-input" id="UserName" name="UserName" required autoComplete="off">
 							</div>
 							<div class="input-group mb-3 bottom-border">
-  								<div class="input-group-prepend">
-    								<span class="input-group-text none-border-input white-background" id="basic-addon1"><i class="fa fa-lock"></i></span>
-  								</div>
-								  <input tabindex="2" type="password" placeholder="Password" class="form-control none-border-input" id="Password" name="Password" required autocomplete="new-password">
+								<div class="input-group-prepend">
+									<span class="input-group-text none-border-input white-background" id="basic-addon1"><i class="fa fa-lock"></i></span>
+								</div>
+								<input tabindex="2" type="password" placeholder="Password" class="form-control none-border-input" id="Password" name="Password" required autocomplete="new-password">
 							</div>
 							<div class="mb-3">
-							<button tabindex="3" type="submit" class="form-control btn-login" id="btnLogin">Sign In</button> 
+								<button tabindex="3" type="submit" class="form-control btn-login" id="btnLogin">Sign In</button> 
 							</div>
 						</form>
 						
@@ -120,39 +120,41 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {
+
 			$('#divFileName').text('');
 			$('#frmlogin').submit(function(event) {
 				event.preventDefault();
+				clearMsgParent();
+				triggerSpinner();
 				$.ajax({
-				url: '<?php echo base_url()."AuthenticateCL/Login" ?>',
-				type: 'POST',
-				dataType: 'json',
-				data: {
-					UserName: $('#UserName').val(),
-					Password:$('#Password').val()
-				},
-				success:function (resp) {
-					debugger;
-					if (resp.success) {
-						if (resp.role_user==1) {
-							$('#btnShare').show();
+					url: '<?php echo base_url()."AuthenticateCL/Login" ?>',
+					type: 'POST',
+					dataType: 'json',
+					data: {
+						UserName: $('#UserName').val(),
+						Password:$('#Password').val()
+					},
+					success:function (resp) {
+						if (resp.success) {
+							if (resp.role_user==1) {
+								$('#btnShare').show();
+							}
+							$('#btn-Save').show();
+							$('#popupLogin').modal('hide');
+							$('#authenticate').remove();
+							$('#processuser').append(resp.data);
+							$('.modal-backdrop.fade.show').remove();
+							processFeature();
+						}else{
+							addMsgError(resp.msg);
 						}
-						$('#btn-Save').show();
-						$('#popupLogin').modal('hide');
-						$('#authenticate').remove();
-						$('#processuser').append(resp.data);
-						$('.modal-backdrop.fade.show').remove();
-						processFeature();
-					}else{
-						addMsgError(resp.msg);
+					},
+					error:function (resp) {
+						addMsgError("Login Error!");
 					}
-				},
-				error:function (resp) {
-					addMsgError("Login Error!");
-				}
-			}).always(function (argument) {
-				removeSpinner();
-			})
+				}).always(function (argument) {
+					removeSpinner();
+				})
 			});
 			$('#frmregister').submit(function(event) {
 				event.preventDefault();
