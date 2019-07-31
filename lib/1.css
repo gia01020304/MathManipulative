@@ -262,9 +262,12 @@
 }
 .btn-perform {
 	font-size: 22px;
-	cursor: pointer;
+	cursor: pointer !important;
 	float: right;
 	padding: 12px;
+}
+.btn-perform-counter{
+	cursor:pointer !important;
 }
 .btn-perform:hover {
 	color: red;
