@@ -10,19 +10,6 @@ class MY_Controller extends CI_Controller
         $this->checkWordpressLogin();
     }
     private function checkWordpressLogin() {
-        // sonvc
-        $wp_load_file_path = dirname(__file__) . '\..\..\..\wp-load.php';
-        $wp_config_file_path = dirname(__file__) . '\..\..\..\wp-config.php';
-        try {
-            if (file_exists($wp_load_file_path)) {
-                require_once $wp_load_file_path;
-            }
-            if (file_exists($wp_config_file_path)) {
-                require_once $wp_config_file_path;
-            }
-        } catch(Exception $ex) {
-            // do somethingsite_url
-        }
         if (function_exists("get_current_user_id")) {
             if (!get_current_user_id()) {
                 //get landing page
