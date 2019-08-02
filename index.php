@@ -276,6 +276,19 @@ if (!isset($view_folder[0]) && is_dir(APPPATH . 'views' . DIRECTORY_SEPARATOR)) 
 
 define('VIEWPATH', $view_folder . DIRECTORY_SEPARATOR);
 
+// sonvc
+$wp_load_file_path = dirname(__file__) . '\..\wp-load.php';
+$wp_config_file_path = dirname(__file__) . '\..\wp-config.php';
+try {
+    if (file_exists($wp_load_file_path)) {
+        require_once $wp_load_file_path;
+    }
+    if (file_exists($wp_config_file_path)) {
+        require_once $wp_config_file_path;
+    }
+} catch(Exception $ex) {
+    // do somethingsite_url
+}
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
