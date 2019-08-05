@@ -41,7 +41,6 @@
 				var themes = new Object();
 				themes[Graph.prototype.defaultThemeName] = xhr[1].getDocumentElement(); 
 				
-				debugger;
 				// Main
 				editorUI = new EditorUi(new Editor(urlParams['chrome'] == '0', themes),document.getElementById('divEditor'));
 				<?php if (isset($shared)): ?>
