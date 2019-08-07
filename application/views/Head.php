@@ -23,6 +23,7 @@
 	var isAuthen=false;
 	var isAdmin=false;
 	var menus = '<?= $menusString ?>';
+	var textAble = false;
 </script>
 
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Init.js?v=<?=$version?>"></script>

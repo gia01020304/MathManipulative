@@ -455,6 +455,11 @@ button{
 	background-size: cover !important;
 	background-image: url(./images/hand.png) !important;
 }
+.geSprite-text-tool {
+	cursor: pointer;
+	background-size: cover !important;
+	background-image: url(./images/texticon.png) !important;
+}
 .geSprite-ruler {
 	cursor: pointer;
 	background-size: cover !important;
