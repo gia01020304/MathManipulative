@@ -200,7 +200,7 @@
 	border-radius: 100%;
 }
 .counter-card {
-	width: 100%;
+	width: 75%;
 	height: 100%;
 	cursor: pointer;
 	-webkit-transform-style: preserve-3d;
@@ -213,6 +213,7 @@
 	border: red 1px;
 	border-radius: 100%;
 	overflow: visible;
+	margin:auto;
 }
 .red-color {
 	background: #dd4050;
