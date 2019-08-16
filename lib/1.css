@@ -530,3 +530,11 @@ sup {
 	position: unset;
 	vertical-align:super;
 }
+.btn-perform-test {
+	position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 12px;
+    height: 0px;
+    width: 0px;
+}
