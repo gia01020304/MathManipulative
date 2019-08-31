@@ -1,4 +1,4 @@
-<?php $version = '1.3.8' ?>
+<?php $version = '1.3.9' ?>
 <title>Math Manipulation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -40,6 +40,7 @@
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Shapes.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Actions.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Menus.js?v=<?=$version?>"></script>
+<script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/mxFreehand.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Toolbar.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Dialogs.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/svg/svg.min.js?v=<?=$version?>"></script>
