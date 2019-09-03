@@ -40,6 +40,7 @@
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Shapes.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Actions.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Menus.js?v=<?=$version?>"></script>
+<script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/mxFreehand.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Toolbar.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/javascript/editor/js/Dialogs.js?v=<?=$version?>"></script>
 <script type="text/javascript" src="<?= base_url() ?>/lib/svg/svg.min.js?v=<?=$version?>"></script>
